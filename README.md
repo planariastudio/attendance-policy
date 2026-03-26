@@ -9,7 +9,7 @@ Covers attendance rules, cut-off periods, day off, cuti, izin tidak masuk kerja,
 ## Live Site
 
 Deployed via GitHub Pages:  
-`https://joshuaerv.github.io/planaria-policy/`
+`https://planariastudio.github.io/attendance-policy/`
 
 ## Structure
 
