@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Attendance, Day Off & Compensation Policy — Planaria Studio</title>
-<meta name="description" content="Panduan lengkap kebijakan attendance, day off, cuti, izin tidak masuk kerja, dan restrukturisasi kompensasi Planaria Studio. Berlaku Maret 2026.">
+<title>Attendance & Compensation Policy — Planaria Studio</title>
+<meta name="description" content="Official policy handbook covering attendance, day off, leave, absence, and compensation restructuring at Planaria Studio. Effective March 2026.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #faf9f7;
+  --bg: #f7f7f5;
   --white: #ffffff;
   --text: #1a1a1a;
-  --text-secondary: #555555;
-  --text-muted: #888888;
-  --border: #e8e5e0;
-  --border-light: #f0ede8;
-  --accent: #7c6bff;
-  --accent-light: #f0eeff;
-  --accent-bg: #f7f5ff;
+  --text-secondary: #4a4a4a;
+  --text-muted: #7a7a7a;
+  --border: #e4e2dd;
+  --border-light: #edebe7;
+  --accent: #2b534b;
+  --accent-light: #e8f0ee;
+  --accent-bg: #f0f5f4;
   --green: #22c55e;
   --green-bg: #f0fdf4;
   --green-border: #bbf7d0;
-  --amber: #f59e0b;
+  --amber: #d97706;
   --amber-bg: #fffbeb;
   --amber-border: #fde68a;
-  --red: #ef4444;
+  --red: #dc2626;
   --red-bg: #fef2f2;
   --red-border: #fecaca;
-  --blue: #3b82f6;
+  --blue: #2563eb;
   --blue-bg: #eff6ff;
   --blue-border: #bfdbfe;
   --sidebar-w: 272px;
@@ -50,306 +50,143 @@ body {
 
 /* ─── SIDEBAR ─── */
 .sidebar {
-  position: fixed;
-  top: 0; left: 0;
-  width: var(--sidebar-w);
-  height: 100vh;
+  position: fixed; top: 0; left: 0;
+  width: var(--sidebar-w); height: 100vh;
   background: var(--white);
   border-right: 1px solid var(--border);
   padding: 32px 20px;
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
-  overflow-y: auto;
+  display: flex; flex-direction: column;
+  z-index: 100; overflow-y: auto;
 }
 
-.sidebar-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
-}
-
+.sidebar-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
 .sidebar-brand-icon {
-  width: 28px; height: 28px;
-  background: var(--text);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: -0.5px;
-  flex-shrink: 0;
+  width: 30px; height: 30px; border-radius: 7px;
+  overflow: hidden; flex-shrink: 0;
 }
-
-.sidebar-brand-text {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--text);
-}
+.sidebar-brand-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.sidebar-brand-text { font-weight: 600; font-size: 15px; color: var(--text); }
 
 .sidebar-doc-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: var(--accent);
-  background: var(--accent-light);
-  border: 1px solid rgba(124,107,255,0.15);
-  padding: 3px 10px;
-  border-radius: 100px;
-  margin: 12px 0 28px 0;
-  width: fit-content;
-  letter-spacing: 0.04em;
-  font-weight: 500;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent);
+  background: var(--accent-light); border: 1px solid rgba(43,83,75,0.15);
+  padding: 3px 10px; border-radius: 100px; margin: 12px 0 28px 0;
+  width: fit-content; letter-spacing: 0.04em; font-weight: 500;
 }
 
 .sidebar-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 9.5px;
-  color: var(--text-muted);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  margin-top: 4px;
-  padding-left: 12px;
+  font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--text-muted);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 10px; margin-top: 4px; padding-left: 12px;
 }
 
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  margin-bottom: 20px;
-}
-
+.sidebar-nav { display: flex; flex-direction: column; gap: 1px; margin-bottom: 20px; }
 .sidebar-nav a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: all 0.15s ease;
-  line-height: 1.4;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; font-weight: 500; color: var(--text-secondary);
+  text-decoration: none; padding: 8px 12px; border-radius: 6px;
+  transition: all 0.15s ease; line-height: 1.4;
 }
-
-.sidebar-nav a:hover {
-  color: var(--text);
-  background: var(--border-light);
-}
-
-.sidebar-nav a.active {
-  color: var(--accent);
-  background: var(--accent-light);
-  font-weight: 600;
-}
-
+.sidebar-nav a:hover { color: var(--text); background: var(--border-light); }
+.sidebar-nav a.active { color: var(--accent); background: var(--accent-light); font-weight: 600; }
 .sidebar-nav a .nav-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  opacity: 0.45;
-  width: 18px;
-  flex-shrink: 0;
-  text-align: right;
+  font-family: 'DM Mono', monospace; font-size: 10px; opacity: 0.45;
+  width: 18px; flex-shrink: 0; text-align: right;
 }
 
-.sidebar-footer {
-  margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-}
-
-.sidebar-footer-text {
-  font-size: 11px;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-.sidebar-footer-text a {
-  color: var(--accent);
-  text-decoration: none;
-}
+.sidebar-footer { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); }
+.sidebar-footer-text { font-size: 11px; color: var(--text-muted); line-height: 1.7; }
+.sidebar-footer-text a { color: var(--accent); text-decoration: none; }
 
 /* ─── MOBILE ─── */
 .menu-toggle {
-  display: none;
-  position: fixed;
-  top: 14px; left: 14px;
-  z-index: 200;
-  width: 40px; height: 40px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 4px;
+  display: none; position: fixed; top: 14px; left: 14px; z-index: 200;
+  width: 40px; height: 40px; background: var(--white);
+  border: 1px solid var(--border); border-radius: 8px; cursor: pointer;
+  align-items: center; justify-content: center; flex-direction: column; gap: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
-
-.menu-toggle span {
-  width: 16px; height: 1.5px;
-  background: var(--text);
-  display: block;
-  transition: all 0.3s ease;
-}
-
+.menu-toggle span { width: 16px; height: 1.5px; background: var(--text); display: block; transition: all 0.3s ease; }
 .menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(3.5px, 3.5px); }
 .menu-toggle.open span:nth-child(2) { opacity: 0; }
 .menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(3.5px, -3.5px); }
 
-.sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 90;
-  backdrop-filter: blur(2px);
-}
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 90; backdrop-filter: blur(2px); }
 
 /* ─── MAIN ─── */
-.main {
-  margin-left: var(--sidebar-w);
-  min-height: 100vh;
-}
-
-.content {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 48px 48px 80px;
-}
+.main { margin-left: var(--sidebar-w); min-height: 100vh; }
+.content { max-width: var(--content-max); margin: 0 auto; padding: 48px 48px 80px; }
 
 /* ─── HERO ─── */
 .hero {
-  padding: 56px 48px 48px;
-  border-bottom: 1px solid var(--border);
-  max-width: var(--content-max);
-  margin: 0 auto;
+  padding: 56px 48px 48px; border-bottom: 1px solid var(--border);
+  max-width: var(--content-max); margin: 0 auto;
 }
-
 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: 'DM Mono', monospace;
-  font-size: 10.5px;
-  color: var(--accent);
-  background: var(--accent-light);
-  border: 1px solid rgba(124,107,255,0.15);
-  padding: 4px 12px;
-  border-radius: 100px;
-  margin-bottom: 24px;
-  letter-spacing: 0.04em;
-  font-weight: 500;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--accent);
+  background: var(--accent-light); border: 1px solid rgba(43,83,75,0.15);
+  padding: 4px 12px; border-radius: 100px; margin-bottom: 24px;
+  letter-spacing: 0.04em; font-weight: 500;
 }
-
 .hero h1 {
-  font-family: 'Source Serif 4', serif;
-  font-size: 38px;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.5px;
-  color: var(--text);
-  margin-bottom: 8px;
+  font-family: 'Source Serif 4', serif; font-size: 38px; font-weight: 700;
+  line-height: 1.15; letter-spacing: -0.5px; color: var(--text); margin-bottom: 8px;
 }
-
 .hero h1 span { color: var(--accent); }
-
-.hero-subtitle {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  max-width: 560px;
-  margin-bottom: 32px;
-}
-
-.hero-meta {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-}
-
+.hero-subtitle { font-size: 16px; color: var(--text-secondary); line-height: 1.65; max-width: 560px; margin-bottom: 32px; }
+.hero-meta { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--border); }
 .hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
 .hero-meta-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
 .hero-meta-val { font-size: 14px; font-weight: 600; color: var(--text); }
 
+/* ─── TABLE OF CONTENTS ─── */
+.toc {
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+  padding: 28px 32px; margin-bottom: 48px;
+}
+.toc-title {
+  font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
+}
+.toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+.toc-item {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 14px; color: var(--text-secondary); text-decoration: none;
+  padding: 8px 12px; border-radius: 6px; transition: all 0.15s ease;
+}
+.toc-item:hover { background: var(--border-light); color: var(--text); }
+.toc-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); font-weight: 500; width: 20px; flex-shrink: 0; }
+.toc-text { font-weight: 500; }
+
 /* ─── STATS ─── */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
-  margin-bottom: 48px;
-}
-
-.stat-box {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px 20px;
-  text-align: center;
-}
-
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 48px; }
+.stat-box { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 24px 20px; text-align: center; }
 .stat-num { font-family: 'Source Serif 4', serif; font-size: 40px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
 .stat-label { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
 
 /* ─── SECTION ─── */
 .section { margin-bottom: 56px; }
-
-.section-header {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 8px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid var(--accent);
-}
-
+.section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; padding-bottom: 16px; border-bottom: 2px solid var(--accent); }
 .section-num { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 700; color: var(--text-muted); opacity: 0.3; line-height: 1; }
 .section-step-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
 .section-title { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 700; line-height: 1.2; color: var(--text); }
+.section-intro { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; max-width: 620px; }
 
 /* ─── STEP CARD ─── */
-.step-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  margin-bottom: 16px;
-  overflow: hidden;
-}
-
+.step-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
 .step-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--border-light);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; border-bottom: 1px solid var(--border-light);
 }
-
 .step-card-header-left { display: flex; align-items: center; gap: 12px; }
 .step-card-icon { font-size: 18px; line-height: 1; }
 .step-card-title { font-size: 15px; font-weight: 600; color: var(--text); }
-
 .step-card-badge {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 0.04em;
-  padding: 3px 10px;
-  border-radius: 100px;
-  font-weight: 500;
-  flex-shrink: 0;
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.04em;
+  padding: 3px 10px; border-radius: 100px; font-weight: 500; flex-shrink: 0;
 }
-
 .badge-required { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-border); }
 .badge-action { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); }
 .badge-auto { color: var(--green); background: var(--green-bg); border: 1px solid var(--green-border); }
@@ -362,181 +199,85 @@ body {
 
 /* ─── CALLOUT ─── */
 .callout {
-  display: flex;
-  gap: 14px;
-  padding: 16px 20px;
-  border-radius: 8px;
-  margin: 16px 0;
-  font-size: 14px;
-  line-height: 1.6;
-  border-left: 3px solid;
+  display: flex; gap: 14px; padding: 16px 20px; border-radius: 8px;
+  margin: 16px 0; font-size: 14px; line-height: 1.6; border-left: 3px solid;
 }
-
 .callout-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
 .callout-content strong { display: block; margin-bottom: 2px; color: var(--text); }
-
 .callout-info { background: var(--blue-bg); border-color: var(--blue); color: var(--text-secondary); }
 .callout-warning { background: var(--amber-bg); border-color: var(--amber); color: var(--text-secondary); }
 .callout-success { background: var(--green-bg); border-color: var(--green); color: var(--text-secondary); }
 .callout-danger { background: var(--red-bg); border-color: var(--red); color: var(--text-secondary); }
 
 /* ─── FLOW ─── */
-.flow-container {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
-  margin: 20px 0;
-}
-
+.flow-container { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin: 20px 0; }
 .flow-container-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
 .flow-container-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6; max-width: 520px; }
 .flow-container-desc strong { color: var(--text); }
-
 .flow-steps { display: flex; align-items: stretch; gap: 0; flex-wrap: wrap; }
-
-.flow-step {
-  display: flex;
-  flex-direction: column;
-  padding: 18px 20px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  flex: 1;
-  min-width: 140px;
-}
-
+.flow-step { display: flex; flex-direction: column; padding: 18px 20px; background: var(--bg); border: 1px solid var(--border); flex: 1; min-width: 140px; }
 .flow-step:first-child { border-radius: 8px 0 0 8px; }
 .flow-step:last-child { border-radius: 0 8px 8px 0; }
 .flow-step-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 8px; }
 .flow-step-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
 .flow-step-sub { font-size: 11px; color: var(--text-muted); line-height: 1.45; }
-
-.flow-step.highlight { background: var(--accent-bg); border-color: rgba(124,107,255,0.2); }
+.flow-step.highlight { background: var(--accent-bg); border-color: rgba(43,83,75,0.2); }
 .flow-step.highlight .flow-step-title { color: var(--accent); }
 .flow-step.danger { background: var(--red-bg); border-color: var(--red-border); }
 .flow-step.danger .flow-step-title { color: var(--red); }
-
 .flow-arrow { display: flex; align-items: center; padding: 0 6px; color: var(--text-muted); font-size: 16px; flex-shrink: 0; }
 
 /* ─── NUMBERED LIST ─── */
 .numbered-steps { counter-reset: step; margin: 16px 0; }
-
 .numbered-step {
-  display: flex;
-  gap: 14px;
-  padding: 12px 0;
+  display: flex; gap: 14px; padding: 12px 0;
   border-bottom: 1px solid var(--border-light);
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
 }
-
 .numbered-step:last-child { border-bottom: none; }
-
 .numbered-step::before {
-  counter-increment: step;
-  content: counter(step);
-  width: 24px; height: 24px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-muted);
-  flex-shrink: 0;
-  margin-top: 1px;
+  counter-increment: step; content: counter(step);
+  width: 24px; height: 24px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: var(--text-muted); flex-shrink: 0; margin-top: 1px;
 }
-
 .numbered-step strong { color: var(--text); }
+
+/* ─── SCREENSHOT ─── */
+.screenshot { margin: 20px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--white); }
+.screenshot img { width: 100%; height: auto; display: block; }
+.screenshot-caption {
+  padding: 10px 16px; font-size: 12px; font-style: italic;
+  color: var(--text-muted); background: var(--bg);
+  border-top: 1px solid var(--border-light); line-height: 1.5;
+}
+.screenshot-meme { margin: 20px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--white); max-width: 400px; }
+.screenshot-meme img { width: 100%; height: auto; display: block; }
 
 /* ─── KOMPENSASI ─── */
 .kompensasi-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 36px;
-  margin: 20px 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 36px; margin: 20px 0;
 }
-
 .kompensasi-left h3 { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
 .kompensasi-left p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
-
 .kompensasi-item {
-  display: flex;
-  gap: 12px;
-  padding: 16px;
-  background: var(--bg);
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  display: flex; gap: 12px; padding: 16px; background: var(--bg);
+  border: 1px solid var(--border-light); border-radius: 8px; margin-bottom: 8px;
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
 }
-
 .kompensasi-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
 .kompensasi-item strong { color: var(--text); }
-
-/* ─── SCREENSHOT ─── */
-.screenshot {
-  margin: 20px 0;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--white);
-}
-
-.screenshot img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.screenshot-caption {
-  padding: 10px 16px;
-  font-size: 12px;
-  font-style: italic;
-  color: var(--text-muted);
-  background: var(--bg);
-  border-top: 1px solid var(--border-light);
-  line-height: 1.5;
-}
-
-.screenshot-meme {
-  margin: 20px 0;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: var(--white);
-  max-width: 400px;
-}
-
-.screenshot-meme img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 /* ─── DIVIDER ─── */
 .divider { height: 1px; background: var(--border); margin: 48px 0; }
 
 /* ─── FOOTER ─── */
 .footer {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 32px 48px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  max-width: var(--content-max); margin: 0 auto; padding: 32px 48px;
+  border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;
 }
-
 .footer-brand { font-family: 'Source Serif 4', serif; font-size: 16px; font-weight: 600; color: var(--text); }
 .footer-brand sup { font-size: 9px; color: var(--text-muted); }
 .footer-right { font-size: 12px; color: var(--text-muted); text-align: right; line-height: 1.7; }
@@ -555,8 +296,8 @@ body {
   .flow-arrow { transform: rotate(90deg); padding: 6px 0; }
   .flow-step, .flow-step:first-child, .flow-step:last-child { border-radius: 8px; }
   .kompensasi-grid { grid-template-columns: 1fr; padding: 24px; }
-  .section-header { flex-direction: row; }
   .hero h1 { font-size: 28px; }
+  .toc-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -569,39 +310,49 @@ body {
 <body>
 
 <!-- MOBILE -->
-<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-  <span></span><span></span><span></span>
-</button>
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-brand">
-    <div class="sidebar-brand-icon">PS</div>
+    <div class="sidebar-brand-icon"><img src="assets/img/planaria-logo.png" alt="Planaria Studio"></div>
     <div class="sidebar-brand-text">Planaria Studio</div>
   </div>
-  <div class="sidebar-doc-badge">📋 Policy Handbook</div>
+  <div class="sidebar-doc-badge">📋 Internal Policy</div>
 
   <div class="sidebar-label">Overview</div>
   <nav class="sidebar-nav">
-    <a href="#top" class="active"><span class="nav-num">—</span> Ringkasan</a>
+    <a href="#top" class="active"><span class="nav-num">—</span> At a Glance</a>
   </nav>
 
-  <div class="sidebar-label">Kebijakan</div>
+  <div class="sidebar-label">Attendance</div>
   <nav class="sidebar-nav">
-    <a href="#attendance"><span class="nav-num">1</span> Attendance Rules</a>
-    <a href="#cutoff"><span class="nav-num">2</span> Cut Off Attendance</a>
-    <a href="#off-day"><span class="nav-num">3</span> Day Off Rules</a>
-    <a href="#cuti"><span class="nav-num">4</span> Cuti Rules</a>
-    <a href="#izin"><span class="nav-num">5</span> Izin Tidak Masuk</a>
-    <a href="#kompensasi"><span class="nav-num">6</span> Restrukturisasi Kompensasi</a>
+    <a href="#logging-attendance"><span class="nav-num">1</span> Logging Attendance</a>
+    <a href="#cutoff"><span class="nav-num">2</span> Monthly Cut-Off</a>
+  </nav>
+
+  <div class="sidebar-label">Working Hours</div>
+  <nav class="sidebar-nav">
+    <a href="#working-hours"><span class="nav-num">3</span> Hours & Overtime</a>
+  </nav>
+
+  <div class="sidebar-label">Time Off</div>
+  <nav class="sidebar-nav">
+    <a href="#day-off"><span class="nav-num">4</span> Day Off</a>
+    <a href="#leave"><span class="nav-num">5</span> Paid Leave</a>
+    <a href="#absence"><span class="nav-num">6</span> Unplanned Absence</a>
+  </nav>
+
+  <div class="sidebar-label">Compensation</div>
+  <nav class="sidebar-nav">
+    <a href="#compensation"><span class="nav-num">7</span> Salary Restructuring</a>
   </nav>
 
   <div class="sidebar-footer">
     <p class="sidebar-footer-text">
-      <a href="mailto:juliuspandu@planariastudio.com">juliuspandu@planariastudio.com</a><br>
-      planariastudio.com<br>
-      Berlaku Maret 2026
+      <a href="https://planariastudio.com">planariastudio.com</a><br>
+      Effective March 2026
     </p>
   </div>
 </aside>
@@ -611,98 +362,116 @@ body {
 
   <!-- HERO -->
   <div class="hero" id="top">
-    <div class="hero-badge">Berlaku Maret 2026</div>
-    <h1>Attendance, Day Off<br>& Compensation <span>Policy.</span></h1>
-    <p class="hero-subtitle">Formalisasi aturan Attendance, Day Off, Cuti, Izin Tidak Masuk Kerja, dan Restrukturisasi Kompensasi — berlaku untuk seluruh karyawan mulai Maret 2026.</p>
+    <div class="hero-badge">Effective March 2026</div>
+    <h1>Attendance &<br>Compensation <span>Policy.</span></h1>
+    <p class="hero-subtitle">Everything you need to know about how attendance works, how to take time off, and what's changing with compensation — all in one place.</p>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <span class="hero-meta-label">Berlaku</span>
-        <span class="hero-meta-val">Maret 2026</span>
+        <span class="hero-meta-label">Effective</span>
+        <span class="hero-meta-val">March 2026</span>
       </div>
       <div class="hero-meta-item">
-        <span class="hero-meta-label">Berlaku untuk</span>
-        <span class="hero-meta-val">Semua Karyawan</span>
+        <span class="hero-meta-label">Applies To</span>
+        <span class="hero-meta-val">All Employees</span>
       </div>
       <div class="hero-meta-item">
         <span class="hero-meta-label">Platform</span>
-        <span class="hero-meta-val">Staff Hub · Attendance Form</span>
+        <span class="hero-meta-val">ClickUp · Staff Hub</span>
       </div>
       <div class="hero-meta-item">
-        <span class="hero-meta-label">Topik</span>
-        <span class="hero-meta-val">6 Kebijakan</span>
+        <span class="hero-meta-label">Sections</span>
+        <span class="hero-meta-val">7 Chapters</span>
       </div>
     </div>
   </div>
 
   <div class="content">
 
-    <!-- STATS -->
-    <div class="stats-row">
-      <div class="stat-box"><div class="stat-num">8</div><div class="stat-label">Off Day / bulan<br>rollover N+2</div></div>
-      <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Hari Cuti / bulan<br>tidak dapat diuangkan</div></div>
-      <div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Hari kerja notice<br>minimum pengajuan</div></div>
-      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">Hari maks cuti<br>berturut-turut</div></div>
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc">
+      <div class="toc-title">Table of Contents</div>
+      <div class="toc-grid">
+        <a href="#logging-attendance" class="toc-item"><span class="toc-num">1</span><span class="toc-text">Logging Attendance</span></a>
+        <a href="#cutoff" class="toc-item"><span class="toc-num">2</span><span class="toc-text">Monthly Cut-Off</span></a>
+        <a href="#working-hours" class="toc-item"><span class="toc-num">3</span><span class="toc-text">Working Hours & Overtime</span></a>
+        <a href="#day-off" class="toc-item"><span class="toc-num">4</span><span class="toc-text">Day Off</span></a>
+        <a href="#leave" class="toc-item"><span class="toc-num">5</span><span class="toc-text">Paid Leave</span></a>
+        <a href="#absence" class="toc-item"><span class="toc-num">6</span><span class="toc-text">Unplanned Absence</span></a>
+        <a href="#compensation" class="toc-item"><span class="toc-num">7</span><span class="toc-text">Salary Restructuring</span></a>
+      </div>
     </div>
 
-    <!-- ═══ 1. ATTENDANCE RULES ═══ -->
-    <div class="section" id="attendance">
-      <div class="section-step-label">Kebijakan Satu</div>
+    <!-- STATS -->
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-num">8</div><div class="stat-label">Days off per month<br>rollover up to N+2</div></div>
+      <div class="stat-box"><div class="stat-num">40</div><div class="stat-label">Hours per week<br>flexible arrangement</div></div>
+      <div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Working days<br>minimum notice</div></div>
+      <div class="stat-box"><div class="stat-num">25</div><div class="stat-label">Monthly cut-off<br>date for attendance</div></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 1 — LOGGING ATTENDANCE                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section" id="logging-attendance">
+      <div class="section-step-label">Chapter 1</div>
       <div class="section-header">
         <span class="section-num">1</span>
-        <h2 class="section-title">Attendance Rules</h2>
+        <h2 class="section-title">Logging Attendance</h2>
       </div>
+      <p class="section-intro">Every team member is required to log their attendance daily through ClickUp. This section covers where to find the form, when to fill it in, and how to do it properly.</p>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📍</span><span class="step-card-title">Where — Di Mana Mengisi Attendance</span></div>
+          <div class="step-card-header-left"><span class="step-card-icon">📍</span><span class="step-card-title">Where to Log</span></div>
           <span class="step-card-badge badge-required">Required</span>
         </div>
         <div class="step-card-body">
-          <p>Attendance <strong>WAJIB</strong> diisi melalui <strong>Staff Hub → [2026] Absensi → Attendance Form</strong>.</p>
-          <p>Tidak diperbolehkan mengisi attendance di luar form tersebut.</p>
+          <p>All attendance entries must go through the official form at <strong>Staff Hub → [2026] Absensi → Attendance Form</strong>. This is the only accepted method — entries submitted outside this form will not be recorded.</p>
           <div class="screenshot">
-            <img src="assets/img/staff-hub-navigation.png" alt="Staff Hub navigation — klik Spaces → Staff Hub → [2026] Absensi" loading="lazy">
-            <div class="screenshot-caption">Navigasi ClickUp — buka Spaces → Staff Hub → [2026] Absensi untuk mengakses Attendance Form</div>
+            <img src="assets/img/staff-hub-navigation.png" alt="Staff Hub navigation in ClickUp" loading="lazy">
+            <div class="screenshot-caption">ClickUp navigation — open Spaces → Staff Hub → [2026] Absensi to access the Attendance Form</div>
           </div>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📅</span><span class="step-card-title">When — Kapan Mengisi</span></div>
-          <span class="step-card-badge badge-action">Setiap Hari</span>
+          <div class="step-card-header-left"><span class="step-card-icon">📅</span><span class="step-card-title">When to Log</span></div>
+          <span class="step-card-badge badge-action">Daily</span>
         </div>
         <div class="step-card-body">
-          <p>Diisi <strong>setiap hari kerja</strong>. Status <strong>OFF</strong> diisi saat mengajukan day off.</p>
+          <p>Fill in the form <strong>every working day</strong>, no exceptions.</p>
+          <p>On days you plan to take off, submit the form with status <strong>OFF</strong> at least <strong>2 working days in advance</strong>. This acts as a request to management — you'll receive a notification with the <strong>approval or rejection</strong>, along with the reason.</p>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">🎯</span><span class="step-card-title">Why — Tujuan Attendance</span></div>
-          <span class="step-card-badge badge-info">Info</span>
+          <div class="step-card-header-left"><span class="step-card-icon">🎯</span><span class="step-card-title">Why It Matters</span></div>
+          <span class="step-card-badge badge-info">Context</span>
         </div>
         <div class="step-card-body">
-          <p>Untuk <strong>tracking kehadiran</strong>, <strong>workload status</strong>, dan <strong>perencanaan tim</strong>.</p>
+          <p>Attendance data feeds directly into three things: <strong>official presence records</strong>, <strong>workload visibility</strong> for your lead, and <strong>capacity planning</strong> across the team. Keeping it accurate helps everyone.</p>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📝</span><span class="step-card-title">How — Cara Mengisi</span></div>
+          <div class="step-card-header-left"><span class="step-card-icon">📝</span><span class="step-card-title">How to Fill It In</span></div>
           <span class="step-card-badge badge-required">Required</span>
         </div>
         <div class="step-card-body">
+          <p>Here's what each field expects:</p>
           <div class="numbered-steps">
-            <div class="numbered-step"><strong>Your Name</strong> → isi nama kamu</div>
-            <div class="numbered-step"><strong>User</strong> → assign yourself</div>
-            <div class="numbered-step">Pilih <strong>Attendance & Workload Status</strong>: Heavy / Medium / Light / Standby / <strong>OFF</strong> (by request — akan ada approval/rejection)</div>
-            <div class="numbered-step">Isi <strong>Date</strong> → tanggal attendance</div>
-            <div class="numbered-step">Isi <strong>Notes</strong>:<br>• Hari kerja → jelaskan pekerjaan hari itu<br>• OFF → tulis alasan singkat (contoh: keperluan keluarga, sakit)</div>
+            <div class="numbered-step"><strong>Your Name</strong> — enter your full name as registered in the system.</div>
+            <div class="numbered-step"><strong>User</strong> — assign yourself (click the field and select your name).</div>
+            <div class="numbered-step"><strong>Attendance & Workload Status</strong> — pick the one that best describes your day: <strong>Heavy</strong>, <strong>Medium</strong>, <strong>Light</strong>, <strong>Standby</strong>, or <strong>OFF</strong>. Selecting OFF will trigger an approval flow from your lead.</div>
+            <div class="numbered-step"><strong>Date</strong> — select the date you're logging for.</div>
+            <div class="numbered-step"><strong>Notes</strong> — on working days, briefly describe what you worked on. For OFF days, state the reason (e.g., "personal errand", "not feeling well").</div>
           </div>
           <div class="screenshot">
-            <img src="assets/img/attendance-form.png" alt="Attendance Form di ClickUp — Your Name, User, Attendance & Workload Status, Date, Notes" loading="lazy">
-            <div class="screenshot-caption">Attendance Form di ClickUp — isi semua field yang bertanda bintang merah (*) sebelum klik Submit</div>
+            <img src="assets/img/attendance-form.png" alt="Attendance Form in ClickUp" loading="lazy">
+            <div class="screenshot-caption">The Attendance Form — all fields marked with an asterisk (*) are required before you can submit</div>
           </div>
         </div>
       </div>
@@ -710,225 +479,352 @@ body {
 
     <div class="divider"></div>
 
-    <!-- ═══ 2. CUT OFF ATTENDANCE ═══ -->
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 2 — MONTHLY CUT-OFF                        -->
+    <!-- ═══════════════════════════════════════════ -->
     <div class="section" id="cutoff">
-      <div class="section-step-label">Kebijakan Dua</div>
+      <div class="section-step-label">Chapter 2</div>
       <div class="section-header">
         <span class="section-num">2</span>
-        <h2 class="section-title">Cut Off Attendance</h2>
+        <h2 class="section-title">Monthly Cut-Off</h2>
       </div>
+      <p class="section-intro">Attendance runs on a fixed monthly cycle with a hard deadline. Once the window closes, no changes can be made — so make sure your records are complete before then.</p>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📊</span><span class="step-card-title">Periode Perhitungan</span></div>
-          <span class="step-card-badge badge-required">Penting</span>
+          <div class="step-card-header-left"><span class="step-card-icon">📊</span><span class="step-card-title">The Attendance Cycle</span></div>
+          <span class="step-card-badge badge-required">Important</span>
         </div>
         <div class="step-card-body">
-          <p>Perhitungan attendance dilakukan dari <strong>tanggal 26 bulan sebelumnya</strong> hingga <strong>tanggal 25 bulan berjalan</strong>.</p>
-          <p>Batas akhir pengisian & perbaikan attendance: <strong>tanggal 25, pukul 23.59</strong> — guna keperluan rekap attendance dan administrasi bulanan.</p>
+          <p>Each attendance period runs from the <strong>26th of the previous month</strong> through the <strong>25th of the current month</strong>.</p>
+          <p>All entries and corrections must be finalized by <strong>the 25th at 23:59 WIB</strong>. This data is used for the monthly attendance recap and payroll processing.</p>
         </div>
       </div>
 
       <div class="callout callout-danger">
         <span class="callout-icon">⚠️</span>
         <div class="callout-content">
-          <strong>Attendance yang belum lengkap hingga waktu cut off akan dianggap tidak tercatat.</strong>
-          Perubahan setelah cut off tidak dapat diproses.
+          <strong>Incomplete records after cut-off will be treated as unrecorded.</strong>
+          There is no mechanism for retroactive corrections. If it's not in the system by the 25th, it doesn't count.
         </div>
       </div>
 
       <div class="screenshot-meme">
-        <img src="assets/img/clock-in-meme.png" alt="Don't forget to clock in when you get to work" loading="lazy">
+        <img src="assets/img/clock-in-meme.png" alt="Friendly reminder to log attendance" loading="lazy">
       </div>
 
       <div class="callout callout-success">
         <span class="callout-icon">✅</span>
         <div class="callout-content">
-          <strong>Checklist sebelum cut off</strong>
-          Pastikan: tidak ada tanggal yang terlewat · status attendance sudah sesuai · notes sudah diisi dengan jelas.
+          <strong>Self-check before the deadline</strong>
+          Before the 25th, verify that: no dates are missing, all statuses are accurate, and notes are filled in with enough detail to be useful.
         </div>
       </div>
 
       <div class="callout callout-info">
         <span class="callout-icon">💰</span>
         <div class="callout-content">
-          <strong>Payroll</strong>
-          Diproses di akhir bulan berdasarkan data attendance hingga tanggal cut off. Slip gaji dikirimkan melalui email masing-masing karyawan, lengkap dengan detail potongan tambahan terkait attendance.
+          <strong>How this ties to payroll</strong>
+          Salaries are processed at the end of each month based on the attendance data locked at cut-off. Your pay slip — including any attendance-related adjustments — will be sent to your email.
         </div>
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- ═══ 3. DAY OFF RULES ═══ -->
-    <div class="section" id="off-day">
-      <div class="section-step-label">Kebijakan Tiga</div>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 3 — WORKING HOURS & OVERTIME               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section" id="working-hours">
+      <div class="section-step-label">Chapter 3</div>
       <div class="section-header">
         <span class="section-num">3</span>
-        <h2 class="section-title">Day Off Rules</h2>
+        <h2 class="section-title">Working Hours & Overtime</h2>
       </div>
+      <p class="section-intro">Planaria Studio operates on a flexible work arrangement. What matters is that the work gets done on time — but there are still guidelines around expected hours and what to do if you're consistently overloaded.</p>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">🏖️</span><span class="step-card-title">Hak Dasar</span></div>
-          <span class="step-card-badge badge-info">Hak Karyawan</span>
+          <div class="step-card-header-left"><span class="step-card-icon">🕐</span><span class="step-card-title">Flexible Schedule</span></div>
+          <span class="step-card-badge badge-info">Policy</span>
         </div>
         <div class="step-card-body">
-          <p>Setiap karyawan berhak atas <strong>8 hari off day</strong> per bulan.</p>
+          <p>Both working days and hours are arranged flexibly. The priority is <strong>completing your work on time</strong> — aligned with the targets and internal deadlines agreed upon with your direct lead.</p>
+          <p>There's no rigid clock-in/clock-out requirement, but you're expected to be available and responsive during core collaboration hours.</p>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📋</span><span class="step-card-title">Pengajuan</span></div>
+          <div class="step-card-header-left"><span class="step-card-icon">⏱️</span><span class="step-card-title">Expected Hours</span></div>
+          <span class="step-card-badge badge-action">Guideline</span>
+        </div>
+        <div class="step-card-body">
+          <p>The standard working arrangement averages <strong>8 effective hours per day</strong> or <strong>40 hours per week</strong>, excluding breaks. This is in line with applicable labor regulations and serves as a reference point — not a rigid daily target.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-card-header-left"><span class="step-card-icon">🔥</span><span class="step-card-title">Feeling Overworked?</span></div>
+          <span class="step-card-badge badge-required">Your Right</span>
+        </div>
+        <div class="step-card-body">
+          <p>If you feel your workload is consistently exceeding reasonable limits, <strong>you have every right to raise it</strong>. This isn't something you should just push through.</p>
+          <p>To start the conversation, <strong>bring supporting evidence</strong> — this could include task logs, project timelines, communication threads, or any other relevant documentation that shows the scope of what you've been handling. Your lead and management will review the situation together with you.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <strong>This is a two-way conversation</strong>
+          Flagging overtime isn't a complaint — it's useful data. It helps the team rebalance workloads, adjust deadlines, or bring in additional support when needed.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 4 — DAY OFF                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section" id="day-off">
+      <div class="section-step-label">Chapter 4</div>
+      <div class="section-header">
+        <span class="section-num">4</span>
+        <h2 class="section-title">Day Off</h2>
+      </div>
+      <p class="section-intro">Day off is your monthly rest entitlement. It's separate from paid leave, and comes with a rollover mechanism so unused days don't go to waste immediately.</p>
+
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-card-header-left"><span class="step-card-icon">🏖️</span><span class="step-card-title">Your Entitlement</span></div>
+          <span class="step-card-badge badge-info">Benefit</span>
+        </div>
+        <div class="step-card-body">
+          <p>Every employee receives <strong>8 days off per month</strong>. This is your standard rest allocation and is separate from paid leave.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-card-header-left"><span class="step-card-icon">📋</span><span class="step-card-title">How to Request</span></div>
           <span class="step-card-badge badge-required">Required</span>
         </div>
         <div class="step-card-body">
-          <p>Pengajuan wajib dilakukan minimal <strong>2 hari kerja sebelumnya</strong> ke atasan langsung melalui <strong>Attendance Form → pilih status OFF → isi alasan di kolom Notes</strong>.</p>
-          <p>Kamu akan menerima notifikasi apabila pengajuan <strong>diterima atau ditolak</strong> beserta alasannya.</p>
+          <p>Submit your request through the <strong>Attendance Form</strong> by selecting <strong>OFF</strong> as your status and noting the reason. Requests must be made at least <strong>2 working days in advance</strong>.</p>
+          <p>You'll receive an automatic notification once your request has been <strong>approved or declined</strong>, along with the reason.</p>
           <div class="screenshot">
-            <img src="assets/img/clickbot-rejection.png" alt="Contoh notifikasi ClickBot — penolakan off day beserta alasan dan saran" loading="lazy">
-            <div class="screenshot-caption">Contoh notifikasi ClickBot — pengajuan off day ditolak beserta alasan dan saran dari sistem</div>
+            <img src="assets/img/clickbot-rejection.png" alt="ClickBot notification for day off request" loading="lazy">
+            <div class="screenshot-caption">Example ClickBot notification — a day off request was declined, with the reason and suggested alternatives</div>
           </div>
         </div>
       </div>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">⚡</span><span class="step-card-title">Kerja saat Off Day</span></div>
-          <span class="step-card-badge badge-info">Ketentuan</span>
+          <div class="step-card-header-left"><span class="step-card-icon">⚡</span><span class="step-card-title">Called In on a Day Off?</span></div>
+          <span class="step-card-badge badge-info">Special Case</span>
         </div>
         <div class="step-card-body">
-          <p>Jika diminta bekerja saat off day karena kebutuhan mendesak dan durasi kerja <strong>lebih dari 2 jam efektif</strong>, off day dapat diganti di waktu lain atau dikompensasi dalam bentuk uang sesuai kontrak.</p>
+          <p>If you're asked to work on a scheduled day off due to an urgent need and the work exceeds <strong>2 effective hours</strong>, you're entitled to either a <strong>replacement day off</strong> at another time or <strong>monetary compensation</strong> as defined in your contract.</p>
         </div>
       </div>
 
+      <!-- ROLLOVER -->
       <div class="flow-container">
-        <div class="flow-container-label">Rollover Off Day — Aturan N+2</div>
-        <p class="flow-container-desc">Off day yang tidak digunakan dapat diakumulasi hingga <strong>N+2 bulan</strong>. Setelah batas waktu, otomatis dikompensasi dalam bentuk uang sesuai ketentuan kontrak.</p>
+        <div class="flow-container-label">Rollover Rules — The N+2 Window</div>
+        <p class="flow-container-desc">Unused days off don't expire immediately. They carry forward for up to <strong>2 months</strong> after the month they were earned. After that, they're automatically converted to cash.</p>
         <div class="flow-steps">
-          <div class="flow-step"><span class="flow-step-num">Bulan N</span><span class="flow-step-title">Sisa Off Day</span><span class="flow-step-sub">Tidak digunakan di bulan berjalan</span></div>
+          <div class="flow-step">
+            <span class="flow-step-num">Month N</span>
+            <span class="flow-step-title">Unused Days</span>
+            <span class="flow-step-sub">Days off not taken during the current month</span>
+          </div>
           <span class="flow-arrow">→</span>
-          <div class="flow-step"><span class="flow-step-num">Bulan N+1</span><span class="flow-step-title">Carry Over</span><span class="flow-step-sub">Masih bisa digunakan, belum hangus</span></div>
+          <div class="flow-step">
+            <span class="flow-step-num">Month N+1</span>
+            <span class="flow-step-title">Carry-Over</span>
+            <span class="flow-step-sub">Still available to use as regular days off</span>
+          </div>
           <span class="flow-arrow">→</span>
-          <div class="flow-step"><span class="flow-step-num">Bulan N+2</span><span class="flow-step-title">Batas Akhir</span><span class="flow-step-sub">Gunakan sebelum akhir bulan ini</span></div>
+          <div class="flow-step">
+            <span class="flow-step-num">Month N+2</span>
+            <span class="flow-step-title">Last Chance</span>
+            <span class="flow-step-sub">Final window to take the remaining days</span>
+          </div>
           <span class="flow-arrow">→</span>
-          <div class="flow-step highlight"><span class="flow-step-num">Setelah N+2</span><span class="flow-step-title">Auto-Kompensasi</span><span class="flow-step-sub">Dibayarkan di payroll bulan N+2</span></div>
+          <div class="flow-step highlight">
+            <span class="flow-step-num">After N+2</span>
+            <span class="flow-step-title">Auto-Payout</span>
+            <span class="flow-step-sub">Converted to cash and included in payroll</span>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- ═══ 4. CUTI RULES ═══ -->
-    <div class="section" id="cuti">
-      <div class="section-step-label">Kebijakan Empat</div>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 5 — PAID LEAVE                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section" id="leave">
+      <div class="section-step-label">Chapter 5</div>
       <div class="section-header">
-        <span class="section-num">4</span>
-        <h2 class="section-title">Cuti Rules</h2>
+        <span class="section-num">5</span>
+        <h2 class="section-title">Paid Leave</h2>
       </div>
+      <p class="section-intro">Paid leave (cuti) is a separate entitlement from your monthly days off. It has stricter limits on consecutive use and cannot be converted to money.</p>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">✈️</span><span class="step-card-title">Hak Dasar</span></div>
-          <span class="step-card-badge badge-info">Hak Karyawan</span>
+          <div class="step-card-header-left"><span class="step-card-icon">✈️</span><span class="step-card-title">Your Entitlement</span></div>
+          <span class="step-card-badge badge-info">Benefit</span>
         </div>
-        <div class="step-card-body"><p>Setiap karyawan berhak atas <strong>1 hari cuti</strong> per bulan.</p></div>
+        <div class="step-card-body">
+          <p>You receive <strong>1 day of paid leave per month</strong>. This is entirely separate from your 8 monthly days off.</p>
+        </div>
       </div>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📋</span><span class="step-card-title">Pengajuan</span></div>
+          <div class="step-card-header-left"><span class="step-card-icon">📋</span><span class="step-card-title">How to Request</span></div>
           <span class="step-card-badge badge-required">Required</span>
         </div>
-        <div class="step-card-body"><p>Pengajuan wajib dilakukan minimal <strong>2 hari kerja sebelumnya</strong>.</p></div>
+        <div class="step-card-body">
+          <p>Submit your leave request at least <strong>2 working days before</strong> the intended date, following the same process as day off requests.</p>
+        </div>
       </div>
 
       <div class="step-card">
         <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📏</span><span class="step-card-title">Batas Berturut-turut</span></div>
-          <span class="step-card-badge badge-action">Aturan</span>
+          <div class="step-card-header-left"><span class="step-card-icon">📏</span><span class="step-card-title">Consecutive Day Limit</span></div>
+          <span class="step-card-badge badge-action">Rule</span>
         </div>
-        <div class="step-card-body"><p>Cuti maksimal dapat diambil <strong>4 hari berturut-turut</strong>. Setelah itu, wajib masuk kerja minimal <strong>5 hari kerja</strong> sebelum mengajukan cuti berikutnya.</p></div>
+        <div class="step-card-body">
+          <p>You can take up to <strong>4 consecutive days</strong> of leave at a time. After that, you're required to work at least <strong>5 full working days</strong> before requesting another leave period.</p>
+        </div>
       </div>
 
       <div class="callout callout-danger">
         <span class="callout-icon">🚫</span>
-        <div class="callout-content"><strong>Cuti tidak dapat diuangkan dalam kondisi apapun.</strong></div>
+        <div class="callout-content">
+          <strong>Paid leave cannot be cashed out under any circumstances.</strong>
+          Unlike days off — which convert to cash after the rollover window — unused leave simply expires. Use it or lose it.
+        </div>
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- ═══ 5. IZIN TIDAK MASUK KERJA ═══ -->
-    <div class="section" id="izin">
-      <div class="section-step-label">Kebijakan Lima</div>
-      <div class="section-header">
-        <span class="section-num">5</span>
-        <h2 class="section-title">Izin Tidak Masuk Kerja</h2>
-      </div>
-
-      <div class="flow-container">
-        <div class="flow-container-label">Urutan Perhitungan — Izin Pribadi</div>
-        <p class="flow-container-desc">Ketidakhadiran karena keperluan pribadi diperhitungkan secara bertahap sesuai urutan berikut:</p>
-        <div class="flow-steps">
-          <div class="flow-step"><span class="flow-step-num">Tahap 1</span><span class="flow-step-title">Saldo Cuti</span><span class="flow-step-sub">Dikurangi dari saldo cuti tahunan</span></div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step"><span class="flow-step-num">Tahap 2</span><span class="flow-step-title">Saldo Off Day</span><span class="flow-step-sub">Jika cuti habis, potong off day</span></div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step danger"><span class="flow-step-num">Tahap 3</span><span class="flow-step-title">Potong Gaji</span><span class="flow-step-sub">Jika keduanya habis, unpaid leave proporsional</span></div>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">🏥</span><span class="step-card-title">Izin Sakit</span></div>
-          <span class="step-card-badge badge-auto">Tidak Potong Gaji</span>
-        </div>
-        <div class="step-card-body"><p>Tidak memotong penghasilan, selama disertai <strong>pemberitahuan dan bukti pendukung</strong> sesuai ketentuan Perusahaan.</p></div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">⏰</span><span class="step-card-title">Izin Mendadak</span></div>
-          <span class="step-card-badge badge-action">Wajib Lapor</span>
-        </div>
-        <div class="step-card-body"><p>Tetap wajib diinformasikan <strong>sesegera mungkin</strong> kepada atasan langsung, termasuk dalam kondisi mendadak.</p></div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📆</span><span class="step-card-title">Izin Panjang</span></div>
-          <span class="step-card-badge badge-info">Case-by-Case</span>
-        </div>
-        <div class="step-card-body"><p>Izin lebih dari <strong>3 hari kerja berturut-turut</strong> diputuskan secara <strong>case-by-case</strong> dengan persetujuan atasan langsung dan manajemen.</p></div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- ═══ 6. RESTRUKTURISASI KOMPENSASI ═══ -->
-    <div class="section" id="kompensasi">
-      <div class="section-step-label">Kebijakan Enam</div>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 6 — UNPLANNED ABSENCE                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section" id="absence">
+      <div class="section-step-label">Chapter 6</div>
       <div class="section-header">
         <span class="section-num">6</span>
-        <h2 class="section-title">Restrukturisasi Kompensasi</h2>
+        <h2 class="section-title">Unplanned Absence</h2>
       </div>
+      <p class="section-intro">Life happens. This section explains how unplanned absences are handled — from sick days to personal emergencies — and the order in which your balances are deducted.</p>
+
+      <div class="callout callout-info">
+        <span class="callout-icon">📌</span>
+        <div class="callout-content">
+          <strong>General expectation</strong>
+          If you're unable to come in for any reason, notify your direct lead (Supervisor) or the company as soon as possible — including for last-minute situations. Early communication always helps.
+        </div>
+      </div>
+
+      <!-- FLOW -->
+      <div class="flow-container">
+        <div class="flow-container-label">Deduction Order — Personal Absence</div>
+        <p class="flow-container-desc">When you're absent for personal reasons outside of scheduled time off, the system deducts from your available balances in this order:</p>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <span class="flow-step-num">First</span>
+            <span class="flow-step-title">Leave Balance</span>
+            <span class="flow-step-sub">Deducted from your paid leave days first</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <span class="flow-step-num">Then</span>
+            <span class="flow-step-title">Day Off Balance</span>
+            <span class="flow-step-sub">If leave is used up, days off are deducted</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step danger">
+            <span class="flow-step-num">Last Resort</span>
+            <span class="flow-step-title">Pay Deduction</span>
+            <span class="flow-step-sub">If both are exhausted, unpaid leave applies</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-card-header-left"><span class="step-card-icon">🏥</span><span class="step-card-title">Sick Days</span></div>
+          <span class="step-card-badge badge-auto">No Pay Deduction</span>
+        </div>
+        <div class="step-card-body">
+          <p>Being sick <strong>will not affect your pay</strong>, as long as you notify your direct lead in a timely manner and provide <strong>supporting documentation</strong> as required by company policy.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-card-header-left"><span class="step-card-icon">⏰</span><span class="step-card-title">Emergency Absence</span></div>
+          <span class="step-card-badge badge-action">Must Notify</span>
+        </div>
+        <div class="step-card-body">
+          <p>Even in emergencies, you're still expected to <strong>inform your direct lead as soon as reasonably possible</strong>. No exceptions — a quick message is all it takes.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-card-header">
+          <div class="step-card-header-left"><span class="step-card-icon">📆</span><span class="step-card-title">Extended Absence (3+ Days)</span></div>
+          <span class="step-card-badge badge-info">Case-by-Case</span>
+        </div>
+        <div class="step-card-body">
+          <p>Absences longer than <strong>3 consecutive working days</strong> — or those arising from special circumstances — don't follow a standard formula. These are handled <strong>on a case-by-case basis</strong> and require sign-off from both:</p>
+          <div class="numbered-steps">
+            <div class="numbered-step">Your <strong>direct lead</strong> (Supervisor)</div>
+            <div class="numbered-step"><strong>Management</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 7 — COMPENSATION RESTRUCTURING             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section" id="compensation">
+      <div class="section-step-label">Chapter 7</div>
+      <div class="section-header">
+        <span class="section-num">7</span>
+        <h2 class="section-title">Salary Restructuring</h2>
+      </div>
+      <p class="section-intro">Starting March 2026, there are two changes to how compensation is structured that apply to every employee. Here's what you need to know.</p>
 
       <div class="kompensasi-grid">
         <div class="kompensasi-left">
           <div class="callout callout-warning" style="margin: 0 0 16px 0;">
             <span class="callout-icon">⚠️</span>
-            <div class="callout-content"><strong>Perlu Perhatian — Berlaku Maret 2026</strong></div>
+            <div class="callout-content"><strong>Action Required — Effective March 2026</strong></div>
           </div>
-          <h3>Perubahan Struktur Kompensasi</h3>
-          <p>Terdapat dua perubahan utama pada struktur kompensasi yang berdampak pada semua karyawan. Detail lengkap akan dikirimkan ke email masing-masing.</p>
+          <h3>What's Changing</h3>
+          <p>Two structural changes are being applied across the board. Individual details will be communicated separately to each employee.</p>
         </div>
         <div>
-          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>Mulai Maret 2026, berlaku <strong>pemotongan PPh 21</strong> sesuai ketentuan perundang-undangan yang berlaku.</div></div>
-          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>Terdapat <strong>restrukturisasi komponen gaji</strong> yang berdampak pada struktur upah masing-masing karyawan — nominal disesuaikan dengan role.</div></div>
-          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div><strong>Detail lengkap</strong> akan dikirimkan ke email masing-masing pada hari yang sama. Mohon dicek dan dikonfirmasi.</div></div>
-          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>Apabila ada pertanyaan, silakan hubungi <strong>atasan langsung atau manajemen</strong>.</div></div>
+          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>Starting March 2026, <strong>income tax (PPh 21) withholding</strong> will be applied in accordance with applicable Indonesian tax law.</div></div>
+          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>There is a <strong>restructuring of salary components</strong> that affects the breakdown of each employee's compensation. Specific amounts are adjusted by role.</div></div>
+          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>A <strong>personalized breakdown</strong> with full details of your updated compensation structure will be sent to your email on the same day. Please review and confirm receipt.</div></div>
+          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>If you have any questions, reach out to your <strong>direct lead</strong> or <strong>management</strong> for clarification.</div></div>
         </div>
       </div>
     </div>
@@ -939,56 +835,33 @@ body {
   <div class="footer">
     <div class="footer-brand">Planaria Studio<sup>™</sup></div>
     <div class="footer-right">
-      <a href="mailto:juliuspandu@planariastudio.com">juliuspandu@planariastudio.com</a><br>
-      planariastudio.com · Berlaku Maret 2026
+      <a href="https://planariastudio.com">planariastudio.com</a> · Effective March 2026
     </div>
   </div>
 
 </div>
 
 <script>
-// Mobile menu
 const toggle = document.getElementById('menuToggle');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('sidebarOverlay');
+toggle.addEventListener('click', () => { toggle.classList.toggle('open'); sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
+overlay.addEventListener('click', () => { toggle.classList.remove('open'); sidebar.classList.remove('open'); overlay.classList.remove('open'); });
 
-toggle.addEventListener('click', () => {
-  toggle.classList.toggle('open');
-  sidebar.classList.toggle('open');
-  overlay.classList.toggle('open');
-});
-
-overlay.addEventListener('click', () => {
-  toggle.classList.remove('open');
-  sidebar.classList.remove('open');
-  overlay.classList.remove('open');
-});
-
-// Active nav tracking
 const navLinks = document.querySelectorAll('.sidebar-nav a');
-const sectionEls = document.querySelectorAll('[id]');
-
 const obs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const id = entry.target.id;
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-      });
+      navLinks.forEach(link => { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
     }
   });
 }, { threshold: 0.15, rootMargin: '-80px 0px -60% 0px' });
-
 document.querySelectorAll('.section, .hero').forEach(s => { if (s.id) obs.observe(s); });
 
-// Close sidebar on nav click (mobile)
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    if (window.innerWidth <= 900) {
-      toggle.classList.remove('open');
-      sidebar.classList.remove('open');
-      overlay.classList.remove('open');
-    }
+    if (window.innerWidth <= 900) { toggle.classList.remove('open'); sidebar.classList.remove('open'); overlay.classList.remove('open'); }
   });
 });
 </script>
