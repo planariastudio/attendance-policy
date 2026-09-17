@@ -1,869 +1,904 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Attendance & Compensation Policy — Planaria Studio</title>
-<meta name="description" content="Official policy handbook covering attendance, day off, leave, absence, and compensation restructuring at Planaria Studio. Effective March 2026.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #f7f7f5;
-  --white: #ffffff;
-  --text: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #7a7a7a;
-  --border: #e4e2dd;
-  --border-light: #edebe7;
-  --accent: #2b534b;
-  --accent-light: #e8f0ee;
-  --accent-bg: #f0f5f4;
-  --green: #22c55e;
-  --green-bg: #f0fdf4;
-  --green-border: #bbf7d0;
-  --amber: #d97706;
-  --amber-bg: #fffbeb;
-  --amber-border: #fde68a;
-  --red: #dc2626;
-  --red-bg: #fef2f2;
-  --red-border: #fecaca;
-  --blue: #2563eb;
-  --blue-bg: #eff6ff;
-  --blue-border: #bfdbfe;
-  --sidebar-w: 272px;
-  --content-max: 780px;
-}
-
-html { scroll-behavior: smooth; scroll-padding-top: 24px; }
-
-body {
-  font-family: 'DM Sans', -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-  font-size: 15px;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ─── SIDEBAR ─── */
-.sidebar {
-  position: fixed; top: 0; left: 0;
-  width: var(--sidebar-w); height: 100vh;
-  background: var(--white);
-  border-right: 1px solid var(--border);
-  padding: 32px 20px;
-  display: flex; flex-direction: column;
-  z-index: 100; overflow-y: auto;
-}
-
-.sidebar-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
-.sidebar-brand-icon {
-  width: 30px; height: 30px; border-radius: 7px;
-  overflow: hidden; flex-shrink: 0;
-}
-.sidebar-brand-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.sidebar-brand-text { font-weight: 600; font-size: 15px; color: var(--text); }
-
-.sidebar-doc-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent);
-  background: var(--accent-light); border: 1px solid rgba(43,83,75,0.15);
-  padding: 3px 10px; border-radius: 100px; margin: 12px 0 28px 0;
-  width: fit-content; letter-spacing: 0.04em; font-weight: 500;
-}
-
-.sidebar-label {
-  font-family: 'DM Mono', monospace; font-size: 9.5px; color: var(--text-muted);
-  letter-spacing: 0.12em; text-transform: uppercase;
-  margin-bottom: 10px; margin-top: 4px; padding-left: 12px;
-}
-
-.sidebar-nav { display: flex; flex-direction: column; gap: 1px; margin-bottom: 20px; }
-.sidebar-nav a {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 13px; font-weight: 500; color: var(--text-secondary);
-  text-decoration: none; padding: 8px 12px; border-radius: 6px;
-  transition: all 0.15s ease; line-height: 1.4;
-}
-.sidebar-nav a:hover { color: var(--text); background: var(--border-light); }
-.sidebar-nav a.active { color: var(--accent); background: var(--accent-light); font-weight: 600; }
-.sidebar-nav a .nav-num {
-  font-family: 'DM Mono', monospace; font-size: 10px; opacity: 0.45;
-  width: 18px; flex-shrink: 0; text-align: right;
-}
-
-.sidebar-footer { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); }
-.sidebar-footer-text { font-size: 11px; color: var(--text-muted); line-height: 1.7; }
-.sidebar-footer-text a { color: var(--accent); text-decoration: none; }
-
-/* ─── MOBILE ─── */
-.menu-toggle {
-  display: none; position: fixed; top: 14px; left: 14px; z-index: 200;
-  width: 40px; height: 40px; background: var(--white);
-  border: 1px solid var(--border); border-radius: 8px; cursor: pointer;
-  align-items: center; justify-content: center; flex-direction: column; gap: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-}
-.menu-toggle span { width: 16px; height: 1.5px; background: var(--text); display: block; transition: all 0.3s ease; }
-.menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(3.5px, 3.5px); }
-.menu-toggle.open span:nth-child(2) { opacity: 0; }
-.menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(3.5px, -3.5px); }
-
-.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 90; backdrop-filter: blur(2px); }
-
-/* ─── MAIN ─── */
-.main { margin-left: var(--sidebar-w); min-height: 100vh; }
-.content { max-width: var(--content-max); margin: 0 auto; padding: 48px 48px 80px; }
-
-/* ─── HERO ─── */
-.hero {
-  padding: 56px 48px 48px; border-bottom: 1px solid var(--border);
-  max-width: var(--content-max); margin: 0 auto;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--accent);
-  background: var(--accent-light); border: 1px solid rgba(43,83,75,0.15);
-  padding: 4px 12px; border-radius: 100px; margin-bottom: 24px;
-  letter-spacing: 0.04em; font-weight: 500;
-}
-.hero h1 {
-  font-family: 'Source Serif 4', serif; font-size: 38px; font-weight: 700;
-  line-height: 1.15; letter-spacing: -0.5px; color: var(--text); margin-bottom: 8px;
-}
-.hero h1 span { color: var(--accent); }
-.hero-subtitle { font-size: 16px; color: var(--text-secondary); line-height: 1.65; max-width: 560px; margin-bottom: 32px; }
-.hero-meta { display: flex; gap: 32px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--border); }
-.hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
-.hero-meta-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
-.hero-meta-val { font-size: 14px; font-weight: 600; color: var(--text); }
-
-/* ─── TABLE OF CONTENTS ─── */
-.toc {
-  background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-  padding: 28px 32px; margin-bottom: 48px;
-}
-.toc-title {
-  font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted);
-  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px;
-}
-.toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
-.toc-item {
-  display: flex; align-items: center; gap: 12px;
-  font-size: 14px; color: var(--text-secondary); text-decoration: none;
-  padding: 8px 12px; border-radius: 6px; transition: all 0.15s ease;
-}
-.toc-item:hover { background: var(--border-light); color: var(--text); }
-.toc-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); font-weight: 500; width: 20px; flex-shrink: 0; }
-.toc-text { font-weight: 500; }
-
-/* ─── STATS ─── */
-.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 48px; }
-.stat-box { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 24px 20px; text-align: center; }
-.stat-num { font-family: 'Source Serif 4', serif; font-size: 40px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
-.stat-label { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
-
-/* ─── SECTION ─── */
-.section { margin-bottom: 56px; }
-.section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; padding-bottom: 16px; border-bottom: 2px solid var(--accent); }
-.section-num { font-family: 'Source Serif 4', serif; font-size: 32px; font-weight: 700; color: var(--text-muted); opacity: 0.3; line-height: 1; }
-.section-step-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
-.section-title { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 700; line-height: 1.2; color: var(--text); }
-.section-intro { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 24px; max-width: 620px; }
-
-/* ─── STEP CARD ─── */
-.step-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
-.step-card-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 24px; border-bottom: 1px solid var(--border-light);
-}
-.step-card-header-left { display: flex; align-items: center; gap: 12px; }
-.step-card-icon { font-size: 18px; line-height: 1; }
-.step-card-title { font-size: 15px; font-weight: 600; color: var(--text); }
-.step-card-badge {
-  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.04em;
-  padding: 3px 10px; border-radius: 100px; font-weight: 500; flex-shrink: 0;
-}
-.badge-required { color: var(--red); background: var(--red-bg); border: 1px solid var(--red-border); }
-.badge-action { color: var(--blue); background: var(--blue-bg); border: 1px solid var(--blue-border); }
-.badge-auto { color: var(--green); background: var(--green-bg); border: 1px solid var(--green-border); }
-.badge-info { color: var(--amber); background: var(--amber-bg); border: 1px solid var(--amber-border); }
-
-.step-card-body { padding: 20px 24px; }
-.step-card-body p { margin-bottom: 14px; line-height: 1.7; color: var(--text-secondary); }
-.step-card-body p:last-child { margin-bottom: 0; }
-.step-card-body strong { color: var(--text); font-weight: 600; }
-
-/* ─── CALLOUT ─── */
-.callout {
-  display: flex; gap: 14px; padding: 16px 20px; border-radius: 8px;
-  margin: 16px 0; font-size: 14px; line-height: 1.6; border-left: 3px solid;
-}
-.callout-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-.callout-content strong { display: block; margin-bottom: 2px; color: var(--text); }
-.callout-info { background: var(--blue-bg); border-color: var(--blue); color: var(--text-secondary); }
-.callout-warning { background: var(--amber-bg); border-color: var(--amber); color: var(--text-secondary); }
-.callout-success { background: var(--green-bg); border-color: var(--green); color: var(--text-secondary); }
-.callout-danger { background: var(--red-bg); border-color: var(--red); color: var(--text-secondary); }
-
-/* ─── FLOW ─── */
-.flow-container { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin: 20px 0; }
-.flow-container-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
-.flow-container-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6; max-width: 520px; }
-.flow-container-desc strong { color: var(--text); }
-.flow-steps { display: flex; align-items: stretch; gap: 0; flex-wrap: wrap; }
-.flow-step { display: flex; flex-direction: column; padding: 18px 20px; background: var(--bg); border: 1px solid var(--border); flex: 1; min-width: 140px; }
-.flow-step:first-child { border-radius: 8px 0 0 8px; }
-.flow-step:last-child { border-radius: 0 8px 8px 0; }
-.flow-step-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 8px; }
-.flow-step-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-.flow-step-sub { font-size: 11px; color: var(--text-muted); line-height: 1.45; }
-.flow-step.highlight { background: var(--accent-bg); border-color: rgba(43,83,75,0.2); }
-.flow-step.highlight .flow-step-title { color: var(--accent); }
-.flow-step.danger { background: var(--red-bg); border-color: var(--red-border); }
-.flow-step.danger .flow-step-title { color: var(--red); }
-.flow-arrow { display: flex; align-items: center; padding: 0 6px; color: var(--text-muted); font-size: 16px; flex-shrink: 0; }
-
-/* ─── NUMBERED LIST ─── */
-.numbered-steps { counter-reset: step; margin: 16px 0; }
-.numbered-step {
-  display: flex; gap: 14px; padding: 12px 0;
-  border-bottom: 1px solid var(--border-light);
-  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
-}
-.numbered-step:last-child { border-bottom: none; }
-.numbered-step::before {
-  counter-increment: step; content: counter(step);
-  width: 24px; height: 24px; background: var(--bg); border: 1px solid var(--border);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; color: var(--text-muted); flex-shrink: 0; margin-top: 1px;
-}
-.numbered-step strong { color: var(--text); }
-
-/* ─── SCREENSHOT ─── */
-.screenshot { margin: 20px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--white); }
-.screenshot img { width: 100%; height: auto; display: block; }
-.screenshot-caption {
-  padding: 10px 16px; font-size: 12px; font-style: italic;
-  color: var(--text-muted); background: var(--bg);
-  border-top: 1px solid var(--border-light); line-height: 1.5;
-}
-.screenshot-meme { margin: 20px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--white); max-width: 400px; }
-.screenshot-meme img { width: 100%; height: auto; display: block; }
-
-/* ─── KOMPENSASI ─── */
-.kompensasi-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: 12px; padding: 36px; margin: 20px 0;
-}
-.kompensasi-left h3 { font-family: 'Source Serif 4', serif; font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
-.kompensasi-left p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
-.kompensasi-item {
-  display: flex; gap: 12px; padding: 16px; background: var(--bg);
-  border: 1px solid var(--border-light); border-radius: 8px; margin-bottom: 8px;
-  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
-}
-.kompensasi-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
-.kompensasi-item strong { color: var(--text); }
-
-/* ─── DIVIDER ─── */
-.divider { height: 1px; background: var(--border); margin: 48px 0; }
-
-/* ─── FOOTER ─── */
-.footer {
-  max-width: var(--content-max); margin: 0 auto; padding: 32px 48px;
-  border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;
-}
-.footer-brand { font-family: 'Source Serif 4', serif; font-size: 16px; font-weight: 600; color: var(--text); }
-.footer-brand sup { font-size: 9px; color: var(--text-muted); }
-.footer-right { font-size: 12px; color: var(--text-muted); text-align: right; line-height: 1.7; }
-.footer-right a { color: var(--accent); text-decoration: none; }
-
-/* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-  .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; }
-  .sidebar.open { transform: translateX(0); }
-  .sidebar-overlay.open { display: block; }
-  .menu-toggle { display: flex; }
-  .main { margin-left: 0; }
-  .hero, .content { padding-left: 24px; padding-right: 24px; }
-  .footer { padding-left: 24px; padding-right: 24px; flex-direction: column; gap: 16px; align-items: flex-start; }
-  .flow-steps { flex-direction: column; }
-  .flow-arrow { transform: rotate(90deg); padding: 6px 0; }
-  .flow-step, .flow-step:first-child, .flow-step:last-child { border-radius: 8px; }
-  .kompensasi-grid { grid-template-columns: 1fr; padding: 24px; }
-  .hero h1 { font-size: 28px; }
-  .toc-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-  .stats-row { grid-template-columns: 1fr 1fr; }
-  .hero-meta { flex-direction: column; gap: 16px; }
-  .step-card-header { flex-direction: column; align-items: flex-start; gap: 8px; }
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Attendance, hours, leave and pay at Planaria Studio: the rule and the GoodDay steps, in one policy.">
+<meta name="robots" content="noindex">
+<title>Attendance __TITLE__amp; Compensation Policy</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗓</text></svg>">
+<style>html,body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
+<title>Attendance &amp; Compensation Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@600;700;800&family=Public+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
 
-<!-- MOBILE -->
-<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<style>
+:root{
+  --paper:#FAFAF7; --card:#FFFFFF; --card-2:#F4F4F1;
+  --ink:#000000; --ink-2:#2E2E2E; --muted:#6B6B68;
+  --rule:#E4E4DF; --rule-2:#EFEFEA;
+  --acc:#000000; --acc-2:#2E2E2E; --neon:#9DFF00;
+  --acc-soft:#F0FFD6;
+  --app-bg:#1C1C1C; --app-ink:#EDEDEA; --app-rule:#343434; --app-muted:#8E8E8A;
+  --ok:#1D7F48; --warn:#B0561A; --stop:#BC332A;
+  --mark:#FFC93C; --mark-ink:#6B4A00;
+  --ring:#000000;
+  --maxw:70ch;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#151515; --card:#212121; --card-2:#1C1C1C;
+    --ink:#F4F4F2; --ink-2:#C9C9C6; --muted:#8E8E8A;
+    --rule:#343434; --rule-2:#282828;
+    --acc:#9DFF00; --acc-2:#B6FF3D; --acc-soft:#22300A; --neon:#9DFF00;
+    --app-bg:#0E0E0E; --app-ink:#E6E6E3; --app-rule:#2C2C2C; --app-muted:#8A8A86;
+    --ok:#52C285; --warn:#E5954A; --stop:#EE7169;
+    --mark:#FFD05C; --mark-ink:#3A2700;
+    --ring:#9DFF00;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#151515; --card:#212121; --card-2:#1C1C1C;
+  --ink:#F4F4F2; --ink-2:#C9C9C6; --muted:#8E8E8A;
+  --rule:#343434; --rule-2:#282828;
+  --acc:#9DFF00; --acc-2:#B6FF3D; --acc-soft:#22300A; --neon:#9DFF00;
+  --app-bg:#0E0E0E; --app-ink:#E6E6E3; --app-rule:#2C2C2C; --app-muted:#8A8A86;
+  --ok:#52C285; --warn:#E5954A; --stop:#EE7169;
+  --mark-ink:#1A2600;
+  --ring:#9DFF00;
+}
 
-<!-- SIDEBAR -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
-    <div class="sidebar-brand-icon"><img src="assets/img/planaria-logo.png" alt="Planaria Studio"></div>
-    <div class="sidebar-brand-text">Planaria Studio</div>
+*{box-sizing:border-box}
+body{background:var(--paper);background-image:radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.035),transparent 60%);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Asta Sans",system-ui,sans-serif;letter-spacing:-0.02em;text-wrap:balance;margin:0}
+.mono,code{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+a{color:var(--ink);text-underline-offset:3px;text-decoration-thickness:1.5px;text-decoration-color:var(--muted)}
+a:hover{text-decoration-color:var(--ink);background:var(--card-2)}
+a:focus-visible,.sidenav a:focus-visible{outline:2px solid var(--ring);outline-offset:2px;border-radius:3px}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.topbar-in{max-width:1220px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;font-family:"Asta Sans";font-weight:700;font-size:14px}
+.brand-mark{display:grid;place-items:center;flex:0 0 auto;color:var(--ink)}
+.brand-mark svg{width:19px;height:auto;display:block;fill:currentColor}
+.aud{margin-left:auto;font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule);border-radius:999px;padding:4px 11px}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px 96px;display:grid;grid-template-columns:216px minmax(0,1fr);gap:48px}
+@media (max-width:940px){.wrap{grid-template-columns:1fr;gap:0}}
+.sidenav{position:sticky;top:62px;align-self:start;padding-top:44px;font-size:13.5px}
+@media (max-width:940px){.sidenav{position:static;padding:22px 0 4px;border-bottom:1px solid var(--rule);margin-bottom:12px}}
+.sidenav .lbl{font-family:"JetBrains Mono";font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.sidenav ul{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:1px}
+@media (max-width:940px){.sidenav ul{flex-direction:row;flex-wrap:wrap;gap:6px}}
+.sidenav a{display:flex;gap:9px;color:var(--ink-2);text-decoration:none;padding:5px 9px;border-radius:6px}
+.sidenav a .pn{font-family:"JetBrains Mono";font-size:11px;color:var(--muted);flex:0 0 auto;padding-top:2px}
+.sidenav a:hover{background:var(--card);color:var(--ink)}
+@media (max-width:940px){.sidenav a{border:1px solid var(--rule);font-size:12.5px;padding:4px 9px}}
+main{padding-top:44px;min-width:0}
+
+/* ---------- masthead ---------- */
+.eyebrow{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0 0 14px;font-weight:700}
+h1{font-size:clamp(30px,5.2vw,46px);line-height:1.05;font-weight:700;margin-bottom:16px}
+.standfirst{font-size:18.5px;color:var(--ink-2);max-width:56ch;margin:0 0 30px}
+
+.docmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin:0 0 34px}
+.docmeta div{background:var(--card);padding:12px 15px}
+.docmeta dt{font-family:"JetBrains Mono";font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.docmeta dd{margin:0;font-size:13.6px;font-weight:600;line-height:1.4}
+
+/* ---------- the numbers board ---------- */
+.board{margin:0 0 42px}
+.board-cap{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.figs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+@media (max-width:760px){.figs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fig{background:var(--card);padding:15px 15px 14px;display:flex;flex-direction:column;gap:3px}
+.fig b{font-family:"JetBrains Mono";font-size:23px;font-weight:700;line-height:1.05;color:var(--acc);font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+.fig b small{font-size:13px;font-weight:500;letter-spacing:0}
+.fig span{font-size:12.6px;color:var(--muted);line-height:1.4}
+
+/* ---------- part bands ---------- */
+.part{margin:0 0 14px;padding:26px 0 0;border-top:3px solid var(--ink);display:flex;align-items:baseline;gap:16px;scroll-margin-top:72px}
+.part .pnum{font-family:"JetBrains Mono";font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);flex:0 0 auto}
+.part h2{font-size:27px;font-weight:700}
+.part-lede{color:var(--ink-2);max-width:var(--maxw);margin:2px 0 30px}
+
+/* ---------- clause ---------- */
+.clause{display:grid;grid-template-columns:58px minmax(0,1fr);gap:20px;margin:0 0 34px;scroll-margin-top:72px}
+@media (max-width:640px){.clause{grid-template-columns:1fr;gap:6px}}
+.cno{font-family:"JetBrains Mono";font-size:12.5px;font-weight:700;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.cbody{min-width:0}
+.cbody>h3{font-size:18.5px;font-weight:600;margin:0 0 10px}
+.cbody>:last-child{margin-bottom:0}
+p{margin:0 0 13px;max-width:var(--maxw)}
+ul,ol{margin:0 0 14px;padding-left:20px;max-width:var(--maxw)}
+li{margin-bottom:6px}
+strong{font-weight:600;color:var(--ink)}
+
+/* the two registers: the rule, and the doing */
+.the-rule{border-left:4px solid var(--ink);background:var(--card);border-radius:0 10px 10px 0;padding:15px 18px;margin:0 0 16px;max-width:var(--maxw)}
+.the-rule .lab{font-family:"JetBrains Mono";font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:700;margin:0 0 6px;display:block}
+.the-rule p:last-child{margin-bottom:0}
+.the-rule p{font-size:16.5px}
+
+.doing{margin:0 0 18px}
+.doing>.lab{font-family:"JetBrains Mono";font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 9px;display:flex;align-items:center;gap:9px}
+.doing>.lab::after{content:"";height:1px;flex:1;background:var(--rule)}
+
+.flag{border-left:3px solid var(--b,var(--rule));background:var(--card);border-radius:0 10px 10px 0;padding:13px 17px;margin:0 0 16px;max-width:var(--maxw)}
+.flag .lab{font-family:"JetBrains Mono";font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--b,var(--muted));font-weight:700;margin:0 0 5px;display:block}
+.flag p:last-child{margin-bottom:0}
+.flag p{font-size:15.4px}
+.flag.stop{--b:var(--stop)} .flag.warn{--b:var(--warn)} .flag.ok{--b:var(--ok)}
+
+/* ---------- tables ---------- */
+.tbl{overflow-x:auto;margin:0 0 18px;max-width:var(--maxw);border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14.4px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+th{font-family:"JetBrains Mono";font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.num{font-family:"JetBrains Mono";font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---------- the month cycle graphic ---------- */
+.cycle{border:1px solid var(--rule);background:var(--card);border-radius:12px;padding:20px 20px 16px;margin:0 0 18px;max-width:var(--maxw)}
+.cycle-bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;margin-bottom:12px}
+.cycle-end{font-family:"JetBrains Mono";font-size:11.5px;font-weight:700;color:var(--acc);white-space:nowrap;text-align:center;line-height:1.3}
+.cycle-end em{display:block;font-style:normal;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:2px}
+.cycle-track{height:8px;border-radius:99px;background:linear-gradient(90deg,var(--acc-soft),var(--acc));position:relative}
+.cycle-track::after{content:"";position:absolute;right:0;top:-5px;bottom:-5px;width:2px;background:var(--stop)}
+.cycle-note{font-size:13.2px;color:var(--muted);margin:0}
+
+/* ---------- app screens ---------- */
+figure{margin:0 0 16px;max-width:var(--maxw)}
+figcaption{font-size:12.8px;color:var(--muted);margin-top:8px;line-height:1.5}
+.shot{background:var(--app-bg);border:1px solid var(--app-rule);border-radius:11px;overflow:hidden;color:var(--app-ink);font-size:13.5px}
+.shot-bar{display:flex;align-items:center;gap:7px;padding:8px 13px;border-bottom:1px solid var(--app-rule);font-family:"JetBrains Mono";font-size:10.5px;color:var(--app-muted);letter-spacing:.04em}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--app-rule)}
+.shot-body{padding:13px 14px}
+.navlab{font-family:"JetBrains Mono";font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--app-muted);margin:0 0 7px;padding:0 8px}
+.navitem{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;font-size:13px;margin-bottom:2px}
+.navitem .gi{width:13px;height:13px;border-radius:3px;border:1.5px solid var(--app-muted);flex:0 0 auto}
+.tabs{display:flex;gap:2px;overflow-x:auto;padding:3px 0}
+.tab{padding:7px 11px;border-radius:7px;font-size:12.8px;white-space:nowrap;color:var(--app-muted);display:flex;align-items:center;gap:7px}
+.tab.on{color:var(--app-ink);font-weight:600}
+.field{border-bottom:1px solid var(--app-rule);padding:12px 10px}
+.field:last-child{border-bottom:0}
+.field .fl{font-weight:600;font-size:13.4px;margin:0 0 3px;display:flex;align-items:center;gap:8px;max-width:none}
+.field .fh{color:var(--app-muted);font-size:12.2px;line-height:1.5;margin:0 0 8px;max-width:none}
+.inputbox{border:1px solid var(--app-rule);border-radius:7px;padding:8px 11px;color:var(--app-muted);font-size:12.4px;background:color-mix(in srgb,#000 16%,transparent)}
+.inputbox.filled{color:var(--app-ink)}
+.picker{display:flex;flex-direction:column;gap:2px}
+.opt{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:6px;font-size:12.8px}
+.opt .sw{width:9px;height:9px;border-radius:2px;background:var(--c);flex:0 0 auto}
+.rowset{display:flex;flex-direction:column;gap:1px}
+.row{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px;padding:8px 10px;border-radius:7px;align-items:center}
+.row .k{color:var(--app-muted);font-size:12.4px}
+.row .v{font-weight:500;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.subs{display:flex;flex-direction:column}
+.sub{display:flex;align-items:center;gap:10px;padding:9px 10px;border-bottom:1px solid var(--app-rule);font-size:12.9px;border-radius:6px}
+.sub:last-child{border-bottom:0}
+.sub .ic{width:13px;height:13px;border-radius:3px;border:1.5px solid var(--app-muted);flex:0 0 auto}
+.sub .ic.done{background:var(--app-muted);border-color:var(--app-muted)}
+.sub .tag{margin-left:auto;font-family:"JetBrains Mono";font-size:9.5px;color:var(--app-muted)}
+.msg{background:var(--app-bg);border:1px solid var(--app-rule);border-radius:11px;padding:16px 17px;color:var(--app-ink)}
+.msg .h{font-family:"Asta Sans";font-weight:600;font-size:14.5px;margin:0 0 9px;max-width:none}
+.msg p{margin:0 0 9px;font-size:13.6px;line-height:1.58;color:var(--app-ink);max-width:none}
+.msg p:last-child{margin-bottom:0}
+.msg .b{font-weight:700}
+.msg .lk{color:#7FC4F5;text-decoration:underline;text-underline-offset:2px}
+.btn{display:inline-block;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;background:#2F6FED;color:#fff}
+.clickpin{margin-left:auto;font-family:"JetBrains Mono";font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#75530A;background:var(--mark);border-radius:4px;padding:2px 7px;white-space:nowrap}
+.mk{background:color-mix(in srgb,var(--mark) 17%,transparent);outline:2px solid var(--mark);outline-offset:-2px;border-radius:7px}
+.f{font-family:"JetBrains Mono";font-size:.86em;font-weight:500;background:var(--card-2);border:1px solid var(--rule);border-radius:5px;padding:1.5px 6px;white-space:nowrap}
+.st{font-family:"JetBrains Mono";font-size:.78em;font-weight:700;letter-spacing:.04em;border-radius:4px;padding:2.5px 7px;white-space:nowrap;color:#fff;background:var(--c,#7C848F)}
+
+footer{max-width:var(--maxw);color:var(--muted);font-size:13.4px;border-top:1px solid var(--rule);padding-top:20px;margin-top:8px}
+footer p{max-width:none}
+@media print{.sidenav,.topbar{display:none}.wrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="brand"><span class="brand-mark"><svg viewBox="0 0 497 662" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="83" y="0" width="332" height="83" rx="41.5"/><rect x="0" y="83" width="83" height="497" rx="41.5"/><rect x="415" y="83" width="82" height="247" rx="41"/><rect x="248" y="330" width="167" height="83" rx="41.5"/><rect x="248" y="330" width="83" height="250" rx="41.5"/><rect x="83" y="580" width="165" height="82" rx="41"/></svg></span> Planaria Studio</span>
+    <span class="aud">All staff</span>
   </div>
-  <div class="sidebar-doc-badge">📋 Internal Policy</div>
-
-  <div class="sidebar-label">Overview</div>
-  <nav class="sidebar-nav">
-    <a href="#top" class="active"><span class="nav-num">—</span> At a Glance</a>
-  </nav>
-
-  <div class="sidebar-label">Attendance</div>
-  <nav class="sidebar-nav">
-    <a href="#logging-attendance"><span class="nav-num">1</span> Logging Attendance</a>
-    <a href="#cutoff"><span class="nav-num">2</span> Monthly Cut-Off</a>
-  </nav>
-
-  <div class="sidebar-label">Working Hours</div>
-  <nav class="sidebar-nav">
-    <a href="#working-hours"><span class="nav-num">3</span> Hours & Overtime</a>
-  </nav>
-
-  <div class="sidebar-label">Time Off</div>
-  <nav class="sidebar-nav">
-    <a href="#day-off"><span class="nav-num">4</span> Day Off</a>
-    <a href="#leave"><span class="nav-num">5</span> Paid Leave</a>
-    <a href="#absence"><span class="nav-num">6</span> Unplanned Absence</a>
-  </nav>
-
-  <div class="sidebar-label">Compensation</div>
-  <nav class="sidebar-nav">
-    <a href="#compensation"><span class="nav-num">7</span> Salary Restructuring</a>
-  </nav>
-
-  <div class="sidebar-footer">
-    <p class="sidebar-footer-text">
-      <a href="https://planariastudio.com">planariastudio.com</a><br>
-      Effective March 2026
-    </p>
-  </div>
-</aside>
-
-<!-- MAIN -->
-<div class="main">
-
-  <!-- HERO -->
-  <div class="hero" id="top">
-    <div class="hero-badge">Effective March 2026</div>
-    <h1>Attendance &<br>Compensation <span>Policy.</span></h1>
-    <p class="hero-subtitle">Everything you need to know about how attendance works, how to take time off, and what's changing with compensation — all in one place.</p>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Effective</span>
-        <span class="hero-meta-val">March 2026</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Applies To</span>
-        <span class="hero-meta-val">All Employees</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Platform</span>
-        <span class="hero-meta-val">ClickUp · Staff Hub</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="hero-meta-label">Sections</span>
-        <span class="hero-meta-val">7 Chapters</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="content">
-
-    <!-- TABLE OF CONTENTS -->
-    <div class="toc">
-      <div class="toc-title">Table of Contents</div>
-      <div class="toc-grid">
-        <a href="#logging-attendance" class="toc-item"><span class="toc-num">1</span><span class="toc-text">Logging Attendance</span></a>
-        <a href="#cutoff" class="toc-item"><span class="toc-num">2</span><span class="toc-text">Monthly Cut-Off</span></a>
-        <a href="#working-hours" class="toc-item"><span class="toc-num">3</span><span class="toc-text">Working Hours & Overtime</span></a>
-        <a href="#day-off" class="toc-item"><span class="toc-num">4</span><span class="toc-text">Day Off</span></a>
-        <a href="#leave" class="toc-item"><span class="toc-num">5</span><span class="toc-text">Paid Leave</span></a>
-        <a href="#absence" class="toc-item"><span class="toc-num">6</span><span class="toc-text">Unplanned Absence</span></a>
-        <a href="#compensation" class="toc-item"><span class="toc-num">7</span><span class="toc-text">Salary Restructuring</span></a>
-      </div>
-    </div>
-
-    <!-- STATS -->
-    <div class="stats-row">
-      <div class="stat-box"><div class="stat-num">8</div><div class="stat-label">Days off per month<br>rollover up to N+2</div></div>
-      <div class="stat-box"><div class="stat-num">40</div><div class="stat-label">Hours per week<br>flexible arrangement</div></div>
-      <div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Working days<br>minimum notice</div></div>
-      <div class="stat-box"><div class="stat-num">25</div><div class="stat-label">Monthly cut-off<br>date for attendance</div></div>
-    </div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- 1 — LOGGING ATTENDANCE                     -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section" id="logging-attendance">
-      <div class="section-step-label">Chapter 1</div>
-      <div class="section-header">
-        <span class="section-num">1</span>
-        <h2 class="section-title">Logging Attendance</h2>
-      </div>
-      <p class="section-intro">Every team member is required to log their attendance daily through ClickUp. This section covers where to find the form, when to fill it in, and how to do it properly.</p>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📍</span><span class="step-card-title">Where to Log</span></div>
-          <span class="step-card-badge badge-required">Required</span>
-        </div>
-        <div class="step-card-body">
-          <p>All attendance entries must go through the official form at <strong>Staff Hub → [2026] Absensi → Attendance Form</strong>. This is the only accepted method — entries submitted outside this form will not be recorded.</p>
-          <div class="screenshot">
-            <img src="assets/img/staff-hub-navigation.png" alt="Staff Hub navigation in ClickUp" loading="lazy">
-            <div class="screenshot-caption">ClickUp navigation — open Spaces → Staff Hub → [2026] Absensi to access the Attendance Form</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📅</span><span class="step-card-title">When to Log</span></div>
-          <span class="step-card-badge badge-action">Daily</span>
-        </div>
-        <div class="step-card-body">
-          <p>Fill in the form <strong>every working day</strong>, no exceptions.</p>
-          <p>On days off, submit the form with status <strong>OFF</strong> at least <strong>2 working days in advance</strong>. This serves as a formal request to management. A notification will be sent confirming the <strong>approval or rejection</strong>, along with the reason.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">🎯</span><span class="step-card-title">Why It Matters</span></div>
-          <span class="step-card-badge badge-info">Context</span>
-        </div>
-        <div class="step-card-body">
-          <p>Attendance data is used for three purposes: <strong>official presence records</strong>, <strong>workload visibility</strong> for your lead, and <strong>capacity planning</strong> across the team.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📝</span><span class="step-card-title">How to Fill It In</span></div>
-          <span class="step-card-badge badge-required">Required</span>
-        </div>
-        <div class="step-card-body">
-          <p>Each field in the Attendance Form should be completed as follows:</p>
-          <div class="numbered-steps">
-            <div class="numbered-step"><strong>Your Name</strong> — enter your full name as registered in the system.</div>
-            <div class="numbered-step"><strong>User</strong> — assign yourself (click the field and select your name).</div>
-            <div class="numbered-step"><strong>Attendance & Workload Status</strong> — pick the one that best describes your day: <strong>Heavy</strong>, <strong>Medium</strong>, <strong>Light</strong>, <strong>Standby</strong>, or <strong>OFF</strong>. Selecting OFF will trigger an approval flow from your lead.</div>
-            <div class="numbered-step"><strong>Date</strong> — select the applicable date.</div>
-            <div class="numbered-step"><strong>Notes</strong> — on working days, briefly describe what you worked on. For OFF days, state the reason (e.g., "personal errand", "not feeling well").</div>
-          </div>
-          <div class="screenshot">
-            <img src="assets/img/attendance-form.png" alt="Attendance Form in ClickUp" loading="lazy">
-            <div class="screenshot-caption">The Attendance Form — all fields marked with an asterisk (*) are required before you can submit</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- 2 — MONTHLY CUT-OFF                        -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section" id="cutoff">
-      <div class="section-step-label">Chapter 2</div>
-      <div class="section-header">
-        <span class="section-num">2</span>
-        <h2 class="section-title">Monthly Cut-Off</h2>
-      </div>
-      <p class="section-intro">Attendance runs on a fixed monthly cycle with a hard deadline. Once the window closes, no changes can be made — so make sure your records are complete before then.</p>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📊</span><span class="step-card-title">The Attendance Cycle</span></div>
-          <span class="step-card-badge badge-required">Important</span>
-        </div>
-        <div class="step-card-body">
-          <p>Each attendance period runs from the <strong>26th of the previous month</strong> through the <strong>25th of the current month</strong>.</p>
-          <p>All entries and corrections must be finalized by <strong>the 25th at 23:59 WIB</strong>. This data is used for the monthly attendance recap and payroll processing.</p>
-        </div>
-      </div>
-
-      <div class="callout callout-danger">
-        <span class="callout-icon">⚠️</span>
-        <div class="callout-content">
-          <strong>Incomplete records after cut-off will be treated as unrecorded.</strong>
-          There is no mechanism for retroactive corrections. Any data not submitted by the 25th will not be processed.
-        </div>
-      </div>
-
-      <div class="screenshot-meme">
-        <img src="assets/img/clock-in-meme.png" alt="Friendly reminder to log attendance" loading="lazy">
-      </div>
-
-      <div class="callout callout-success">
-        <span class="callout-icon">✅</span>
-        <div class="callout-content">
-          <strong>Self-check before the deadline</strong>
-          Before the 25th, verify that: no dates are missing, all statuses are accurate, and notes are filled in with enough detail to be useful.
-        </div>
-      </div>
-
-      <div class="callout callout-info">
-        <span class="callout-icon">💰</span>
-        <div class="callout-content">
-          <strong>How this ties to payroll</strong>
-          Salaries are processed at the end of each month based on the attendance data locked at cut-off. Your pay slip — including any attendance-related adjustments — will be sent to your email.
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- 3 — WORKING HOURS & OVERTIME               -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section" id="working-hours">
-      <div class="section-step-label">Chapter 3</div>
-      <div class="section-header">
-        <span class="section-num">3</span>
-        <h2 class="section-title">Working Hours & Overtime</h2>
-      </div>
-      <p class="section-intro">Planaria Studio operates on a flexible work arrangement, with output and deadlines taking priority over fixed schedules. This section outlines the expected working hours and the process for raising overtime concerns.</p>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">🕐</span><span class="step-card-title">Flexible Schedule</span></div>
-          <span class="step-card-badge badge-info">Policy</span>
-        </div>
-        <div class="step-card-body">
-          <p>Both working days and hours are arranged flexibly. The priority is <strong>completing your work on time</strong> — aligned with the targets and internal deadlines agreed upon with your direct lead.</p>
-          <p>There is no rigid clock-in/clock-out requirement, but employees are expected to remain available and responsive during core collaboration hours.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">⏱️</span><span class="step-card-title">Expected Hours</span></div>
-          <span class="step-card-badge badge-action">Guideline</span>
-        </div>
-        <div class="step-card-body">
-          <p>The standard working arrangement averages <strong>8 effective hours per day</strong> or <strong>40 hours per week</strong>, excluding breaks. This is in line with applicable labor regulations and serves as a reference point — not a rigid daily target.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">🔥</span><span class="step-card-title">Overtime & Workload Concerns</span></div>
-          <span class="step-card-badge badge-required">Your Right</span>
-        </div>
-        <div class="step-card-body">
-          <p>If your workload consistently exceeds reasonable limits, <strong>you are entitled to raise this formally</strong>.</p>
-          <p>To initiate a review, <strong>submit supporting evidence</strong> — such as task logs, project timelines, communication records, or other relevant documentation. Your lead and management will evaluate the situation and determine the appropriate course of action.</p>
-        </div>
-      </div>
-
-      <div class="callout callout-info">
-        <span class="callout-icon">💡</span>
-        <div class="callout-content">
-          <strong>Note</strong>
-          Overtime reports serve as operational data to help the team rebalance workloads, adjust deadlines, or allocate additional resources where needed.
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- 4 — DAY OFF                                -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section" id="day-off">
-      <div class="section-step-label">Chapter 4</div>
-      <div class="section-header">
-        <span class="section-num">4</span>
-        <h2 class="section-title">Day Off</h2>
-      </div>
-      <p class="section-intro">Day off is a monthly rest entitlement separate from paid leave. Unused days are subject to a rollover mechanism with a defined expiry window.</p>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">🏖️</span><span class="step-card-title">Your Entitlement</span></div>
-          <span class="step-card-badge badge-info">Benefit</span>
-        </div>
-        <div class="step-card-body">
-          <p>Every employee receives <strong>8 days off per month</strong>. This is your standard rest allocation and is separate from paid leave.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📋</span><span class="step-card-title">How to Request</span></div>
-          <span class="step-card-badge badge-required">Required</span>
-        </div>
-        <div class="step-card-body">
-          <p>Submit your request through the <strong>Attendance Form</strong> by selecting <strong>OFF</strong> as your status and noting the reason. Requests must be made at least <strong>2 working days in advance</strong>.</p>
-          <p>You'll receive an automatic notification once your request has been <strong>approved or declined</strong>, along with the reason.</p>
-          <div class="screenshot">
-            <img src="assets/img/clickbot-rejection.png" alt="ClickBot notification for day off request" loading="lazy">
-            <div class="screenshot-caption">Example ClickBot notification — a day off request was declined, with the reason and suggested alternatives</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">⚡</span><span class="step-card-title">Called In on a Day Off?</span></div>
-          <span class="step-card-badge badge-info">Special Case</span>
-        </div>
-        <div class="step-card-body">
-          <p>If an employee is required to work on a scheduled day off due to urgent operational needs and the work exceeds <strong>2 effective hours</strong>, the employee is entitled to either a <strong>replacement day off</strong> at another time or <strong>monetary compensation</strong> as defined in their contract.</p>
-        </div>
-      </div>
-
-      <!-- ROLLOVER -->
-      <div class="flow-container">
-        <div class="flow-container-label">Rollover Rules — The N+2 Window</div>
-        <p class="flow-container-desc">Unused days off do not expire immediately. They carry forward for up to <strong>2 months</strong> after the month they were earned. After that window, they are automatically converted to monetary compensation.</p>
-        <div class="flow-steps">
-          <div class="flow-step">
-            <span class="flow-step-num">Month N</span>
-            <span class="flow-step-title">Unused Days</span>
-            <span class="flow-step-sub">Days off not taken during the current month</span>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <span class="flow-step-num">Month N+1</span>
-            <span class="flow-step-title">Carry-Over</span>
-            <span class="flow-step-sub">Still available to use as regular days off</span>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <span class="flow-step-num">Month N+2</span>
-            <span class="flow-step-title">Last Chance</span>
-            <span class="flow-step-sub">Final window to take the remaining days</span>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step highlight">
-            <span class="flow-step-num">After N+2</span>
-            <span class="flow-step-title">Auto-Payout</span>
-            <span class="flow-step-sub">Converted to cash and included in payroll</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- 5 — PAID LEAVE                             -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section" id="leave">
-      <div class="section-step-label">Chapter 5</div>
-      <div class="section-header">
-        <span class="section-num">5</span>
-        <h2 class="section-title">Paid Leave</h2>
-      </div>
-      <p class="section-intro">Paid leave (cuti) is a separate entitlement from your monthly days off. It has stricter limits on consecutive use and cannot be converted to money.</p>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">✈️</span><span class="step-card-title">Your Entitlement</span></div>
-          <span class="step-card-badge badge-info">Benefit</span>
-        </div>
-        <div class="step-card-body">
-          <p>You receive <strong>1 day of paid leave per month</strong>. This is entirely separate from your 8 monthly days off.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📋</span><span class="step-card-title">How to Request</span></div>
-          <span class="step-card-badge badge-required">Required</span>
-        </div>
-        <div class="step-card-body">
-          <p>Submit your leave request at least <strong>2 working days before</strong> the intended date, following the same process as day off requests.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📏</span><span class="step-card-title">Consecutive Day Limit</span></div>
-          <span class="step-card-badge badge-action">Rule</span>
-        </div>
-        <div class="step-card-body">
-          <p>Leave may be taken for up to <strong>4 consecutive days</strong> at a time. Following that, the employee is required to work at least <strong>5 full working days</strong> before submitting another leave request.</p>
-        </div>
-      </div>
-
-      <div class="callout callout-danger">
-        <span class="callout-icon">🚫</span>
-        <div class="callout-content">
-          <strong>Paid leave cannot be cashed out under any circumstances.</strong>
-          Unlike days off — which are automatically compensated after the rollover window — unused leave balances expire without conversion.
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- 6 — UNPLANNED ABSENCE                      -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section" id="absence">
-      <div class="section-step-label">Chapter 6</div>
-      <div class="section-header">
-        <span class="section-num">6</span>
-        <h2 class="section-title">Unplanned Absence</h2>
-      </div>
-      <p class="section-intro">This section covers the handling of unplanned absences — including sick days, personal emergencies, and extended leave — as well as the order in which available balances are deducted.</p>
-
-      <div class="callout callout-info">
-        <span class="callout-icon">📌</span>
-        <div class="callout-content">
-          <strong>General requirement</strong>
-          In all cases of absence, employees are expected to notify their direct lead (Supervisor) or the company at the earliest opportunity, including in last-minute situations.
-        </div>
-      </div>
-
-      <!-- FLOW -->
-      <div class="flow-container">
-        <div class="flow-container-label">Deduction Order — Personal Absence</div>
-        <p class="flow-container-desc">For personal absences outside of scheduled time off, deductions are applied to available balances in the following order:</p>
-        <div class="flow-steps">
-          <div class="flow-step">
-            <span class="flow-step-num">First</span>
-            <span class="flow-step-title">Leave Balance</span>
-            <span class="flow-step-sub">Deducted from your paid leave days first</span>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step">
-            <span class="flow-step-num">Then</span>
-            <span class="flow-step-title">Day Off Balance</span>
-            <span class="flow-step-sub">If leave is used up, days off are deducted</span>
-          </div>
-          <span class="flow-arrow">→</span>
-          <div class="flow-step danger">
-            <span class="flow-step-num">Last Resort</span>
-            <span class="flow-step-title">Pay Deduction</span>
-            <span class="flow-step-sub">If both are exhausted, unpaid leave applies</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">🏥</span><span class="step-card-title">Sick Days</span></div>
-          <span class="step-card-badge badge-auto">No Pay Deduction</span>
-        </div>
-        <div class="step-card-body">
-          <p>Being sick <strong>will not affect your pay</strong>, as long as you notify your direct lead in a timely manner and provide <strong>supporting documentation</strong> as required by company policy.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">⏰</span><span class="step-card-title">Emergency Absence</span></div>
-          <span class="step-card-badge badge-action">Must Notify</span>
-        </div>
-        <div class="step-card-body">
-          <p>In all cases of unplanned absence — including emergencies — the employee is required to <strong>notify their direct lead as soon as reasonably possible</strong>.</p>
-        </div>
-      </div>
-
-      <div class="step-card">
-        <div class="step-card-header">
-          <div class="step-card-header-left"><span class="step-card-icon">📆</span><span class="step-card-title">Extended Absence (3+ Days)</span></div>
-          <span class="step-card-badge badge-info">Case-by-Case</span>
-        </div>
-        <div class="step-card-body">
-          <p>Absences exceeding <strong>3 consecutive working days</strong>, or those arising from special circumstances, do not follow a standard formula. These are handled <strong>on a case-by-case basis</strong> and require approval from:</p>
-          <div class="numbered-steps">
-            <div class="numbered-step">Your <strong>direct lead</strong> (Supervisor)</div>
-            <div class="numbered-step"><strong>Management</strong></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- 7 — COMPENSATION RESTRUCTURING             -->
-    <!-- ═══════════════════════════════════════════ -->
-    <div class="section" id="compensation">
-      <div class="section-step-label">Chapter 7</div>
-      <div class="section-header">
-        <span class="section-num">7</span>
-        <h2 class="section-title">Salary Restructuring</h2>
-      </div>
-      <p class="section-intro">Effective March 2026, two structural changes to compensation apply to all employees. Details are outlined below.</p>
-
-      <div class="kompensasi-grid">
-        <div class="kompensasi-left">
-          <div class="callout callout-warning" style="margin: 0 0 16px 0;">
-            <span class="callout-icon">⚠️</span>
-            <div class="callout-content"><strong>Action Required — Effective March 2026</strong></div>
-          </div>
-          <h3>What's Changing</h3>
-          <p>Two structural changes are being applied across the board. Individual details will be communicated separately to each employee.</p>
-        </div>
-        <div>
-          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>Starting March 2026, <strong>income tax (PPh 21) withholding</strong> will be applied in accordance with applicable Indonesian tax law.</div></div>
-          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>There is a <strong>restructuring of salary components</strong> that affects the breakdown of each employee's compensation. Specific amounts are adjusted by role.</div></div>
-          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>A <strong>personalized breakdown</strong> with full details of your updated compensation structure will be sent to your email on the same day. Please review and confirm receipt.</div></div>
-          <div class="kompensasi-item"><div class="kompensasi-dot"></div><div>If you have any questions, reach out to your <strong>direct lead</strong> or <strong>management</strong> for clarification.</div></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="footer-brand">Planaria Studio<sup>™</sup></div>
-    <div class="footer-right">
-      <a href="https://planariastudio.com">planariastudio.com</a> · Effective March 2026
-    </div>
-  </div>
-
 </div>
 
+<div class="wrap">
+
+<nav class="sidenav">
+  <p class="lbl">Contents</p>
+  <ul>
+    <li><a href="#p1"><span class="pn">1</span> Attendance</a></li>
+    <li><a href="#p2"><span class="pn">2</span> Hours &amp; standby</a></li>
+    <li><a href="#p3"><span class="pn">3</span> Time off &amp; leave</a></li>
+    <li><a href="#p4"><span class="pn">4</span> Compensation</a></li>
+    <li><a href="#p5"><span class="pn">5</span> Quick reference</a></li>
+  </ul>
+  <p class="lbl">Parent document</p>
+  <ul>
+    <li><a href="https://planariastudio.github.io/planaria-employee-handbook/"><span class="pn">&rarr;</span> Employee Handbook</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<p class="eyebrow">Policy · All staff · Version September 2026</p>
+<h1>Attendance &amp; Compensation Policy</h1>
+<p class="standfirst">What the studio owes you, what you owe the studio, and exactly where to click for both. The rule and the doing, one document.</p>
+
+<dl class="docmeta">
+  <div><dt>Applies to</dt><dd>Every employee, permanent and fixed-term</dd></div>
+  <div><dt>In force</dt><dd>September 2026</dd></div>
+  <div><dt>Runs in</dt><dd>GoodDay, Staff Hub &rarr; Attendance</dd></div>
+  <div><dt>Supersedes</dt><dd>The ClickUp version</dd></div>
+</dl>
+
+<div class="board">
+  <p class="board-cap">The numbers, before anything else</p>
+  <div class="figs">
+    <div class="fig"><b>Sun</b><span>fixed day off, everyone</span></div>
+    <div class="fig"><b>8</b><span>days off a month, Sundays included</span></div>
+    <div class="fig"><b>9</b><span>the ceiling. Never more in one month</span></div>
+    <div class="fig"><b>12</b><span>days annual leave a year, after 12 months</span></div>
+    <div class="fig"><b>26&rarr;25</b><span>the period, locked 23:59 on the 25th</span></div>
+    <div class="fig"><b>2 <small>days</small></b><span>notice for a day off you choose</span></div>
+    <div class="fig"><b>8 <small>/ 40</small></b><span>effective hours, day and week</span></div>
+    <div class="fig"><b>1 <small>month</small></b><span>salary as holiday allowance, at 12 months' service</span></div>
+  </div>
+</div>
+
+<div class="flag">
+  <span class="lab">Where this sits</span>
+  <p>The <a href="https://planariastudio.github.io/planaria-employee-handbook/"><strong>Employee Handbook</strong></a> is the parent document. This policy is its attendance and compensation chapters, written out in full with the GoodDay steps attached. Where this and your individual contract differ on anything beyond the statutory minimum, <strong>your contract prevails</strong>. Where either conflicts with Indonesian law, the law prevails.</p>
+</div>
+
+<!-- ============ PART 1 ============ -->
+<div class="part" id="p1"><span class="pnum">Part 1</span><h2>Attendance</h2></div>
+<p class="part-lede">One entry per person per working day. It is the record payroll reads, the record your lead reads, and the only one that exists.</p>
+
+<div class="clause" id="c11">
+  <div class="cno">1.1</div>
+  <div class="cbody">
+    <h3>What counts as a record</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Attendance is recorded only through <span class="f">Staff Hub &rarr; Attendance</span> in GoodDay. A message in chat, a note in a call, or a word to your lead is not a record and will not be counted.</p>
+    </div>
+    <p>Two forms, one of them each day. Working, you file a <strong>Daily Standup</strong>. Not working, a <strong>Time Off Request</strong>. Never both. Sundays are the exception: they are off by default, so you file nothing.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Your day</th><th>What you file</th><th>Who answers</th></tr></thead>
+        <tbody>
+          <tr><td>Working</td><td><strong>Daily Standup</strong>, before you start</td><td>Nobody. Filing it is the mark</td></tr>
+          <tr><td><strong>Sunday</strong></td><td>Nothing. It is a fixed day off</td><td>Nobody</td></tr>
+          <tr><td>Sick</td><td><strong>Time Off Request</strong>, same morning</td><td>Julius</td></tr>
+          <tr><td>Taking a day off</td><td><strong>Time Off Request</strong>, 2 working days ahead</td><td>Julius</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="clause" id="c12">
+  <div class="cno">1.2</div>
+  <div class="cbody">
+    <h3>Every working day</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>One Daily Standup for every working day, Monday to Saturday, before you start. No standup on a Sunday. The data does three jobs: the presence record, workload visibility for your lead, and capacity planning across the team.</p>
+    </div>
+
+    <div class="doing">
+      <span class="lab">In GoodDay</span>
+      <figure>
+        <div class="shot">
+          <div class="shot-bar"><span class="dot"></span> Left sidebar</div>
+          <div class="shot-body">
+            <p class="navlab">Staff Hub</p>
+            <div class="navitem mk"><span class="gi"></span> Attendance <span class="clickpin">click</span></div>
+            <div class="navitem"><span class="gi"></span> Production</div>
+            <div class="navitem"><span class="gi"></span> Accounts</div>
+          </div>
+        </div>
+      </figure>
+      <figure>
+        <div class="shot">
+          <div class="shot-bar"><span class="dot"></span> Attendance</div>
+          <div class="shot-body">
+            <div class="tabs">
+              <div class="tab on mk">Daily Standup <span class="clickpin">click</span></div>
+              <div class="tab">Time Off Request</div>
+              <div class="tab">Calendar</div>
+              <div class="tab">Awaiting approval</div>
+              <div class="tab">All records</div>
+            </div>
+          </div>
+        </div>
+        <figcaption>The five tabs across the top of the Attendance project.</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <div class="shot-bar"><span class="dot"></span> Attendance · Daily Standup</div>
+          <div class="shot-body" style="padding:4px 14px">
+            <div class="field">
+              <p class="fl">Your name *</p>
+              <p class="fh">Pick yourself from the list. This is what files the day against you, so choose your own name even if you are filling this in on somebody else's screen.</p>
+              <div class="inputbox mk">Not assigned <span class="clickpin">pick yourself</span></div>
+            </div>
+            <div class="field">
+              <p class="fl">Which job? *</p>
+              <p class="fh">Write the job name exactly as it appears on the Production board. This becomes the title of the record, so it is what makes the day findable later.</p>
+              <div class="inputbox filled">EP 99 CUTDOWN</div>
+            </div>
+            <div class="field">
+              <p class="fl">Other work today</p>
+              <p class="fh">Optional. Any other job you touched today, one per line. Hold shift and press enter to start a new line.</p>
+              <div class="inputbox">&nbsp;</div>
+            </div>
+            <div class="field">
+              <p class="fl">What are you working on? *</p>
+              <p class="fh">The stage you will spend most of today on.</p>
+              <div class="inputbox">Please select</div>
+            </div>
+            <div class="field">
+              <p class="fl">Blocked by anything?</p>
+              <p class="fh">Optional. Only if something outside your control is holding you up.</p>
+              <div class="inputbox">&nbsp;</div>
+            </div>
+            <div class="field">
+              <p class="fl">Which day is this for? *</p>
+              <p class="fh">The day you are logging. One standup covers one day.</p>
+              <div class="inputbox filled mk">Sep 17 <span class="clickpin">one date</span></div>
+            </div>
+          </div>
+        </div>
+        <figcaption>Your name is a list, not a box you type into. So is the stage.</figcaption>
+      </figure>
+    </div>
+
+    <div class="flag warn">
+      <span class="lab">Pick yourself, not the person next to you</span>
+      <p>If somebody else's screen is open, the form will happily file your day against them. Check the name before you submit.</p>
+    </div>
+
+    <div class="flag ok">
+      <span class="lab">Nobody asks how heavy your day feels</span>
+      <p>The old <strong>Heavy / Medium / Light / Standby / OFF</strong> rating is gone. How loaded you are is read from the jobs on the board and from what you write here, not from a number you give yourself. If you are under water, put it in <span class="f">Blocked by anything?</span> or tell your lead directly.</p>
+    </div>
+  </div>
+</div>
+
+<div class="clause" id="c13">
+  <div class="cno">1.3</div>
+  <div class="cbody">
+    <h3>One record, one day</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>One standup covers one day. Two standups on the same date read as two days worked and will be corrected.</p>
+    </div>
+    <p>Worked on two jobs today? The main one goes in <span class="f">Which job?</span> and the rest in <span class="f">Other work today</span>. Missed a day? You can still file it against an earlier date, as long as you are inside the current period. After the 25th you cannot. See <a href="#c15">1.5</a>.</p>
+  </div>
+</div>
+
+<div class="clause" id="c14">
+  <div class="cno">1.4</div>
+  <div class="cbody">
+    <h3>Asking for a day you are not working</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Time off is requested through the <span class="f">Time Off Request</span> tab. A <strong>day off needs two working days' notice</strong>. <strong>Sick can be filed the same morning</strong>, with documentation where it is required. One request covers a run of days, so you do not file one per day.</p>
+    </div>
+
+    <div class="doing">
+      <span class="lab">In GoodDay</span>
+      <figure>
+        <div class="shot">
+          <div class="shot-bar"><span class="dot"></span> Attendance · Time Off Request</div>
+          <div class="shot-body">
+            <div class="picker">
+              <div class="opt mk" style="--c:#FF6157"><span class="sw"></span> Sick <span class="clickpin">can be today</span></div>
+              <div class="opt" style="--c:#28AEF0"><span class="sw"></span> Day off <span class="clickpin" style="background:transparent;color:var(--app-muted);outline:1px solid var(--app-rule)">needs 2 days notice</span></div>
+            </div>
+          </div>
+        </div>
+      </figure>
+      <figure>
+        <div class="shot">
+          <div class="shot-bar"><span class="dot"></span> Attendance · Time Off Request</div>
+          <div class="shot-body" style="padding:4px 14px">
+            <div class="field">
+              <p class="fl">Which day or days? *</p>
+              <p class="fh">One day off? Set start and end to the same date. Several days? Set the first and the last.</p>
+              <div class="inputbox filled mk">Sep 22 &rarr; Sep 22 <span class="clickpin">same date twice</span></div>
+            </div>
+            <div class="field">
+              <p class="fl">Anything Julius should know?</p>
+              <p class="fh">Optional. One line is enough. It helps Julius decide, and it is the only place he can see a reason.</p>
+              <div class="inputbox">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+        <figcaption>The reason box is optional, but it is the only place a reason can be written down.</figcaption>
+      </figure>
+      <figure>
+        <div class="msg">
+          <p class="h">Your request was answered</p>
+          <p>Julius has answered your time off request for <span class="b">22 September</span>.</p>
+          <p>Open it to see what was decided: <span class="lk">Time off, 22 Sep</span></p>
+        </div>
+        <figcaption>The answer comes to you. You do not need to chase it in chat.</figcaption>
+      </figure>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>You asked for</th><th>Status becomes</th><th>What it means for pay</th></tr></thead>
+        <tbody>
+          <tr><td>A sick day</td><td><span class="st" style="--c:#4A5361">SICK</span></td><td>No effect on pay, and no effect on your balances</td></tr>
+          <tr><td>A day off</td><td><span class="st" style="--c:#4A5361">DAY OFF</span></td><td>Comes out of your 8 monthly days</td></tr>
+          <tr><td>A day Julius marks as paid</td><td><span class="st" style="--c:#4A5361">PAID LEAVE</span></td><td>Comes out of your annual leave balance</td></tr>
+          <tr><td>Anything turned down</td><td><span class="st" style="--c:#FF6157">DECLINED</span></td><td>You are expected at work</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flag warn">
+      <span class="lab">Paid leave is never automatic</span>
+      <p>Only Julius can mark a day as paid leave, and payroll reads that field and nothing else. If you believe a day should be paid leave, write it in the request. Do not assume.</p>
+    </div>
+  </div>
+</div>
+
+<div class="clause" id="c15">
+  <div class="cno">1.5</div>
+  <div class="cbody">
+    <h3>The monthly cycle and the cut-off</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Each attendance period runs from the <strong>26th of the previous month through the 25th of the current month</strong>. All entries and corrections must be finalised by the <strong>25th at 23:59 WIB</strong>. Records left incomplete after cut-off count as unrecorded, and there is no retroactive correction.</p>
+    </div>
+
+    <div class="cycle">
+      <div class="cycle-bar">
+        <span class="cycle-end">26th<em>period opens</em></span>
+        <span class="cycle-track"></span>
+        <span class="cycle-end">25th<em>23:59 locked</em></span>
+      </div>
+      <p class="cycle-note">Everything inside the bar is still editable. The red line is the lock. Payroll is calculated from what sits behind it.</p>
+    </div>
+
+    <p><strong>Check your own month before the deadline.</strong> Open <span class="f">All records</span>, find your name, and look for missing dates, wrong dates, and notes too thin to mean anything in three months' time.</p>
+
+    <div class="flag stop">
+      <span class="lab">There is no catching up afterwards</span>
+      <p>Anything not submitted by the 25th is not processed. This is the one deadline in the policy with no discretion attached to it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PART 2 ============ -->
+<div class="part" id="p2"><span class="pnum">Part 2</span><h2>Hours and standby</h2></div>
+<p class="part-lede">Flexible by default. Output and deadlines come before fixed schedules, with two windows where the studio needs you reachable.</p>
+
+<div class="clause" id="c21">
+  <div class="cno">2.1</div>
+  <div class="cbody">
+    <h3>Standard working hours</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>The expected arrangement averages <strong>8 effective hours per day, or 40 per week</strong>, excluding breaks, consistent with the Manpower Law (UU No. 13/2003) as amended. It is a reference point, not a rigid daily target.</p>
+    </div>
+    <p>We are a remote-first team. Where you work from does not matter. Being reachable when the work needs you does.</p>
+  </div>
+</div>
+
+<div class="clause" id="c22">
+  <div class="cno">2.2</div>
+  <div class="cbody">
+    <h3>Standby windows</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Because most clients are overseas, team members remain available and responsive during the core collaboration windows below. Reachable means alert and able to answer feedback or turn a quick revision, not merely online.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Window</th><th>Why it exists</th></tr></thead>
+        <tbody>
+          <tr><td class="num"><strong>09:00 – 15:00 WIB</strong></td><td>The studio day. Briefs, internal review, anything that needs two people</td></tr>
+          <tr><td class="num"><strong>18:00 – 22:00 WIB</strong></td><td>The overseas overlap. Client feedback lands in this window</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flag">
+      <p>Some roles run different standby hours, set in the individual contract. If yours differs, your contract is the one that counts.</p>
+    </div>
+  </div>
+</div>
+
+<div class="clause" id="c23">
+  <div class="cno">2.3</div>
+  <div class="cbody">
+    <h3>Overtime</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Overtime is by mutual agreement and subject to the legal limits under UU No. 13/2003 Article 78. Statutory overtime entitlements on permanent and fixed-term contracts are governed by Indonesian law and your individual contract, and are honoured in full. The studio's obligations here are not negotiable.</p>
+    </div>
+    <p>If your workload is consistently past what is reasonable, you are entitled to raise it formally. Submit the evidence, meaning task logs, project timelines or communication records, to your lead and to management.</p>
+    <div class="flag ok">
+      <span class="lab">Raising it triggers a review, not a telling-off</span>
+      <p>Overtime reporting is operational data. It exists so work can be rebalanced, deadlines moved, or more people put on a job. Nobody is penalised for filing it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PART 3 ============ -->
+<div class="part" id="p3"><span class="pnum">Part 3</span><h2>Time off and leave</h2></div>
+<p class="part-lede">Two separate balances that behave differently. Monthly days off convert to money in the end. Annual leave does not.</p>
+
+<div class="clause" id="c31">
+  <div class="cno">3.1</div>
+  <div class="cbody">
+    <h3>Monthly days off</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p><strong>Sunday is a fixed day off for everyone.</strong> You do not request it and you do not file a standup for it.</p>
+      <p>Every employee gets <strong>8 days off a month</strong>, and <strong>Sundays come out of that 8</strong>. The rest are yours to request. Nobody takes more than <strong>9 days off in any one month</strong>.</p>
+    </div>
+
+    <p>So the arithmetic depends on how many Sundays fall in the month:</p>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Month with</th><th>Sundays, automatic</th><th>Left to request</th><th>Hard ceiling</th></tr></thead>
+        <tbody>
+          <tr><td class="num">4 Sundays</td><td class="num">4</td><td class="num">4</td><td class="num">9</td></tr>
+          <tr><td class="num">5 Sundays</td><td class="num">5</td><td class="num">3</td><td class="num">9</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The ninth day is the one above your normal 8. It exists so a rolled-over day from <a href="#c32">3.2</a> can still be used. It is a ceiling, not an entitlement.</p>
+
+    <div class="flag warn">
+      <span class="lab">Sunday is off, not on call</span>
+      <p>The studio runs seven days a week, so jobs still move on a Sunday. That is covered by whoever is working, not by you. You are not expected to answer on your Sunday.</p>
+    </div>
+
+    <p><strong>Called in on a day off?</strong> If the work runs past <strong>2 effective hours</strong>, you get either a replacement day at a time you agree, or money, as set out in your contract. This applies to Sundays too.</p>
+  </div>
+</div>
+
+<div class="clause" id="c32">
+  <div class="cno">3.2</div>
+  <div class="cbody">
+    <h3>Rollover: the N+2 window</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Unused days off do not expire at the end of the month. They carry for two more, and whatever is left after that is converted to money and paid through payroll.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Period</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="num"><strong>Month N</strong></td><td>Days off earned but not taken</td></tr>
+          <tr><td class="num"><strong>Month N+1</strong></td><td>Still available as regular days off</td></tr>
+          <tr><td class="num"><strong>Month N+2</strong></td><td>Final window to take the remaining days</td></tr>
+          <tr><td class="num"><strong>After N+2</strong></td><td>Converted to money and included in payroll</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The conversion rate is in your contract. In practice Sundays absorb most of the 8, so there is less to roll over than there used to be, and the 9-day ceiling caps how much of it you can spend in one month.</p>
+  </div>
+</div>
+
+<div class="clause" id="c33">
+  <div class="cno">3.3</div>
+  <div class="cbody">
+    <h3>Annual leave</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Government-mandated annual leave under UU No. 13/2003 Article 79, as amended by UU No. 6/2023. <strong>12 working days per year</strong> once you have completed 12 months of continuous service, accruing at <strong>1 day per month</strong> of completed service. Below 12 months of service you have not yet reached the full allocation, but accrual begins from your first month.</p>
+    </div>
+    <p><strong>Up to 4 consecutive days</strong> at a time. After that you work at least <strong>5 full working days</strong> before the next leave request. Requests go in at least 2 working days ahead, the same as a day off.</p>
+    <div class="flag stop">
+      <span class="lab">Annual leave cannot be cashed out</span>
+      <p>Unlike monthly days off, unused annual leave expires without monetary conversion, under any circumstances. This follows current Indonesian labour regulations. It is the one balance worth planning ahead for.</p>
+    </div>
+  </div>
+</div>
+
+<div class="clause" id="c34">
+  <div class="cno">3.4</div>
+  <div class="cbody">
+    <h3>Sick leave</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Illness does not affect your pay and does not reduce your annual leave or day-off balance, provided you notify your direct lead in a timely manner and provide supporting documentation where it is required. This is your right under Indonesian labour law.</p>
+    </div>
+    <p>File it the same morning on the Time Off Request tab, choose <span class="f">Sick</span>, and attach the doctor's note to the request if you have one.</p>
+  </div>
+</div>
+
+<div class="clause" id="c35">
+  <div class="cno">3.5</div>
+  <div class="cbody">
+    <h3>Unplanned absence</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>In all cases of unplanned absence, notify your direct lead or management at the earliest opportunity, including at the last minute. For unplanned personal absences outside scheduled time off, balances are deducted in a fixed order.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Order</th><th>Balance used</th><th>When</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><strong>Paid annual leave</strong></td><td>First, always</td></tr>
+          <tr><td class="num">2</td><td><strong>Monthly days off</strong></td><td>If annual leave is exhausted</td></tr>
+          <tr><td class="num">3</td><td><strong>Unpaid leave</strong></td><td>Last resort, if both are gone</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Emergencies:</strong> notify your lead as soon as reasonably possible. Documentation may be required on your return.</p>
+    <p><strong>Extended absence:</strong> anything past <strong>3 consecutive working days</strong>, or arising from special circumstances, is handled case by case and needs approval from both your direct lead and management.</p>
+  </div>
+</div>
+
+<div class="clause" id="c36">
+  <div class="cno">3.6</div>
+  <div class="cbody">
+    <h3>How requests are answered</h3>
+    <p style="color:var(--muted);font-size:15px">This clause is for Julius and the SPVs. Everyone else can skip it, though there is no harm in knowing how the other side works.</p>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Every request is answered by setting the <span class="f">Approval</span> field. The status follows from it automatically and the request clears out of the approval queue. Statuses are never set by hand.</p>
+    </div>
+
+    <div class="doing">
+      <span class="lab">In GoodDay</span>
+      <figure>
+        <div class="shot">
+          <div class="shot-bar"><span class="dot"></span> Attendance</div>
+          <div class="shot-body">
+            <div class="tabs">
+              <div class="tab">Daily Standup</div>
+              <div class="tab">Time Off Request</div>
+              <div class="tab">Calendar</div>
+              <div class="tab on mk">Awaiting approval <span class="clickpin">click</span></div>
+              <div class="tab">All records</div>
+            </div>
+          </div>
+        </div>
+        <figcaption>Everything in this view needs an answer.</figcaption>
+      </figure>
+      <figure>
+        <div class="shot">
+          <div class="shot-bar"><span class="dot"></span> Time off · 22 Sep</div>
+          <div class="shot-body">
+            <div class="rowset">
+              <div class="row"><span class="k">Status</span><span class="v"><span class="st" style="--c:#28AEF0">REQUESTED</span></span></div>
+              <div class="row"><span class="k">Type</span><span class="v">Day off</span></div>
+              <div class="row mk"><span class="k">Approval</span><span class="v" style="color:var(--app-muted)">empty <span class="clickpin">set this</span></span></div>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>What you set</th><th>Status becomes</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td>Approve a sick day</td><td><span class="st" style="--c:#4A5361">SICK</span></td><td>Keeps illness separate from leave in the record</td></tr>
+          <tr><td>Approve a day off</td><td><span class="st" style="--c:#4A5361">DAY OFF</span></td><td>Unpaid unless you mark it paid</td></tr>
+          <tr><td>Mark as paid leave</td><td><span class="st" style="--c:#4A5361">PAID LEAVE</span></td><td>Payroll depends on this one. It is the only place paid leave is separated from an ordinary day off</td></tr>
+          <tr><td>Decline</td><td><span class="st" style="--c:#FF6157">DECLINED</span></td><td>Covers both sick and day off</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flag warn">
+      <span class="lab">Self-approval is watched, not blocked</span>
+      <p>GoodDay cannot stop a person approving their own day off. Instead, any change to an approval field raises an alert. It is not an accusation. It is what lets us say the record is trustworthy without locking anything down.</p>
+    </div>
+
+    <p><strong>Reading one person's month.</strong> Open <span class="f">All records</span>. It is grouped by the name each person picked, so their days sit together. The same person twice on one date is a mistake worth correcting, because it reads as two days worked.</p>
+    <figure>
+      <div class="shot">
+        <div class="shot-bar"><span class="dot"></span> Attendance · All records</div>
+        <div class="shot-body">
+          <div class="subs">
+            <div class="sub"><span class="ic done"></span> Editor A <span class="tag">6 days</span></div>
+            <div class="sub"><span class="ic done"></span> Editor B <span class="tag">5 days</span></div>
+            <div class="sub"><span class="ic"></span> Not assigned <span class="tag">older records</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption>Anything under Not assigned is from before the form asked for a name.</figcaption>
+    </figure>
+    <div class="flag">
+      <span class="lab">Who is free for the next job</span>
+      <p>That question is answered on the Production board, not here. <strong>On whose desk</strong> shows what is waiting on each person today, <strong>Workload</strong> shows what they are already committed to. Both are in the <a href="https://planariastudio.github.io/planaria-goodday-leadership-guide/">Leadership workflow guide</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PART 4 ============ -->
+<div class="part" id="p4"><span class="pnum">Part 4</span><h2>Compensation</h2></div>
+<p class="part-lede">What attendance turns into at the end of the month, and the allowances that sit alongside it.</p>
+
+<div class="clause" id="c41">
+  <div class="cno">4.1</div>
+  <div class="cbody">
+    <h3>Pay schedule</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>All team members are paid <strong>monthly</strong>. Salaries are processed at the end of each month from the attendance data locked at the 25th cut-off. Your pay slip, including any attendance-related adjustments, is sent to your registered email.</p>
+    </div>
+    <p>Keep your banking details on file accurate and current. If there is ever a delay or a discrepancy, notify management immediately rather than waiting for the next cycle.</p>
+    <div class="flag warn">
+      <span class="lab">This is the link between Part 1 and Part 4</span>
+      <p>An unrecorded day is an unpaid day, and after the 25th there is no way to add it. Clause <a href="#c15">1.5</a> is not administrative housekeeping. It is your pay.</p>
+    </div>
+  </div>
+</div>
+
+<div class="clause" id="c42">
+  <div class="cno">4.2</div>
+  <div class="cbody">
+    <h3>How your salary is set</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Salaries are set on role, scope of responsibilities, and contribution to the team. We aim for rates competitive with the international standard of work we deliver. Any change to your compensation, including promotions, raises and structural adjustments, is communicated in writing.</p>
+    </div>
+    <p>We are transparent about pay. If you have questions about your salary or how it is structured, ask management directly. Formal reviews happen twice a year and are the usual place compensation changes are discussed.</p>
+  </div>
+</div>
+
+<div class="clause" id="c43">
+  <div class="cno">4.3</div>
+  <div class="cbody">
+    <h3>Salary restructuring, effective March 2026</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Two structural changes apply to every employee.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Change</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>income tax withholding</strong></td>
+            <td>Income tax is withheld in accordance with Indonesian tax law. Under the TER system in force since January 2024, monthly withholding runs January through November, with a full progressive reconciliation in December</td>
+          </tr>
+          <tr>
+            <td><strong>Components restructured</strong></td>
+            <td>The breakdown of each employee's compensation has been adjusted by role. A personalised breakdown is sent to your registered email. Review it and confirm receipt</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The December figure will look different from the other eleven months. That is the reconciliation, not an error. If your own breakdown does not match what lands in your account, raise it with management the same month.</p>
+  </div>
+</div>
+
+<div class="clause" id="c44">
+  <div class="cno">4.4</div>
+  <div class="cbody">
+    <h3>Overtime compensation</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>The studio operates on a flexible, output-based model, and trusts you to manage your own time. Where a project demands more than the standard workload, statutory overtime entitlements for employees under formal agreements are defined in your individual contract and honoured in full.</p>
+    </div>
+    <p>The route for raising it is in clause <a href="#c23">2.3</a>. Bring evidence, and expect a review of how work is allocated rather than a one-off payment argument.</p>
+  </div>
+</div>
+
+<div class="clause" id="c45">
+  <div class="cno">4.5</div>
+  <div class="cbody">
+    <h3>Religious holiday allowance</h3>
+    <div class="the-rule">
+      <span class="lab">The rule</span>
+      <p>Every employee is entitled to the religious holiday allowance under Government Regulation No. 36/2021 and Minister of Manpower Regulation No. 6/2016, after <strong>1 month of continuous service</strong>, whether permanent or fixed-term.</p>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Length of service</th><th>What you receive</th></tr></thead>
+        <tbody>
+          <tr><td class="num"><strong>12 months or more</strong></td><td>One full month's salary</td></tr>
+          <tr><td class="num"><strong>Under 12 months</strong></td><td>Prorated: (months of service &divide; 12) &times; one month's salary</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Paid no later than 7 days before</strong> your primary religious holiday, in a <strong>single lump sum</strong>. Instalments are not permitted. The allowance is paid according to your registered religion, and Indonesia officially recognises six: Islam, Protestantism, Catholicism, Hinduism, Buddhism and Confucianism, each with its corresponding primary holiday.</p>
+    <p><strong>Tax:</strong> The holiday allowance is subject to income tax withholding. It is not subject to BPJS contributions.</p>
+    <div class="flag stop">
+      <span class="lab">Late payment carries a statutory fine</span>
+      <p>A late holiday allowance is subject to a fine of <strong>5% of the total owed</strong>, under Government Regulation No. 36/2021. Planaria Studio is committed to full and timely compliance, and this clause exists so you know the obligation is real.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PART 5 ============ -->
+<div class="part" id="p5"><span class="pnum">Part 5</span><h2>Quick reference</h2></div>
+<p class="part-lede">Everything above, compressed to what you need on an ordinary Tuesday.</p>
+
+<div class="clause" id="c51">
+  <div class="cno">5.1</div>
+  <div class="cbody">
+    <h3>The short list</h3>
+    <ul>
+      <li><strong>Sunday is off.</strong> File nothing.</li>
+      <li>Working today? <strong>Daily Standup</strong>, before you start.</li>
+      <li>Not working today? <strong>Time Off Request</strong> instead. Never both.</li>
+      <li>Pick <strong>your own name</strong>. The form will happily file your day against someone else.</li>
+      <li>Copy the job name off the Production board. It becomes the title of the record.</li>
+      <li>A second job today goes in <strong>Other work today</strong>, not a second standup.</li>
+      <li>One standup covers <strong>one day</strong>. One time off request can cover <strong>several</strong>.</li>
+      <li>A day off needs <strong>two working days' notice</strong>. Sick can be the same morning.</li>
+      <li>Write a reason. It is the only place Julius can see one.</li>
+      <li><strong>Paid leave is never automatic.</strong> Julius marks it, payroll reads it.</li>
+      <li>Everything closes on the <strong>25th at 23:59 WIB</strong>. Nothing is fixed afterwards.</li>
+      <li>Sundays come out of your 8. <strong>Never more than 9 days off in a month.</strong></li>
+      <li>Unused monthly days off become <strong>money after N+2</strong>. Unused annual leave becomes <strong>nothing</strong>.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="clause" id="c52">
+  <div class="cno">5.2</div>
+  <div class="cbody">
+    <h3>Legal basis</h3>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Regulation</th><th>What it governs here</th></tr></thead>
+        <tbody>
+          <tr><td><strong>UU No. 13/2003</strong></td><td>Manpower Law. Working hours (Article 78), annual leave (Article 79)</td></tr>
+          <tr><td><strong>UU No. 11/2020</strong></td><td>Cipta Kerja, the Omnibus Law</td></tr>
+          <tr><td><strong>UU No. 6/2023</strong></td><td>Confirmation of Emergency Regulation No. 2/2022 on Job Creation</td></tr>
+          <tr><td><strong>PP No. 36/2021</strong></td><td>Wage Regulation. Religious holiday allowance obligations and the 5% late fine</td></tr>
+          <tr><td><strong>Minister of Manpower Regulation No. 6/2016</strong></td><td>Religious holiday allowance for employees</td></tr>
+          <tr><td><strong>PER-16/PJ/2016</strong></td><td>income tax withholding</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Where any provision of this policy conflicts with applicable law, the law prevails. Where this policy and your individual employment contract differ on matters beyond the statutory minimum, your contract prevails.</p>
+  </div>
+</div>
+
+<footer>
+  <p>Version September 2026. A chapter of the <a href="https://planariastudio.github.io/planaria-employee-handbook/">Employee Handbook</a>.</p>
+</footer>
+
+</main>
+</div>
+<script>window.__GUIDE_NAV__ = [{"href":"https://planariastudio.github.io/planaria-employee-handbook/","label":"Handbook"}];</script>
 <script>
-const toggle = document.getElementById('menuToggle');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('sidebarOverlay');
-toggle.addEventListener('click', () => { toggle.classList.toggle('open'); sidebar.classList.toggle('open'); overlay.classList.toggle('open'); });
-overlay.addEventListener('click', () => { toggle.classList.remove('open'); sidebar.classList.remove('open'); overlay.classList.remove('open'); });
-
-const navLinks = document.querySelectorAll('.sidebar-nav a');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      navLinks.forEach(link => { link.classList.toggle('active', link.getAttribute('href') === '#' + id); });
-    }
+// Adds the cross-links into the guide's own top bar. Keeps the guide files themselves
+// untouched, so the same file can be published as an artifact or to the web.
+(function () {
+  var bar = document.querySelector('.topbar-in');
+  if (!bar) return;
+  var chip = bar.querySelector('.aud');
+  var wrap = document.createElement('span');
+  wrap.style.cssText = 'display:flex;gap:14px;align-items:center;margin-left:18px;font-size:13px';
+  var links = window.__GUIDE_NAV__ || [];
+  links.forEach(function (l) {
+    var a = document.createElement('a');
+    a.href = l.href;
+    a.textContent = l.label;
+    a.style.cssText = 'color:var(--muted);text-decoration:none;white-space:nowrap';
+    a.onmouseover = function () { a.style.color = 'var(--ink)'; };
+    a.onmouseout  = function () { a.style.color = 'var(--muted)'; };
+    wrap.appendChild(a);
   });
-}, { threshold: 0.15, rootMargin: '-80px 0px -60% 0px' });
-document.querySelectorAll('.section, .hero').forEach(s => { if (s.id) obs.observe(s); });
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 900) { toggle.classList.remove('open'); sidebar.classList.remove('open'); overlay.classList.remove('open'); }
-  });
-});
+  if (chip) bar.insertBefore(wrap, chip); else bar.appendChild(wrap);
+})();
 </script>
 </body>
 </html>
