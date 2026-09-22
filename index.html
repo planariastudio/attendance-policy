@@ -354,8 +354,8 @@ footer p{max-width:none}
             </div>
             <div class="field">
               <p class="fl">Which day is this for? *</p>
-              <p class="fh">The day you are logging. One standup covers one day.</p>
-              <div class="inputbox filled mk">Sep 17 <span class="clickpin">one date</span></div>
+              <p class="fh">The day you are logging. It is a range picker, so put the same date in both boxes. This is what puts you on the Attendance calendar, and a standup without it does not appear there at all.</p>
+              <div class="inputbox filled mk">Sep 17 <span class="clickpin">same date twice</span></div>
             </div>
           </div>
         </div>
@@ -702,11 +702,13 @@ footer p{max-width:none}
         <tbody>
           <tr><td>Approve a sick day</td><td><span class="st" style="--c:#4A5361">SICK</span></td><td>Keeps illness separate from leave in the record</td></tr>
           <tr><td>Approve a day off</td><td><span class="st" style="--c:#4A5361">DAY OFF</span></td><td>Unpaid unless you mark it paid</td></tr>
-          <tr><td>Mark as paid leave</td><td><span class="st" style="--c:#4A5361">PAID LEAVE</span></td><td>Payroll depends on this one. It is the only place paid leave is separated from an ordinary day off</td></tr>
+          <tr><td>Mark as paid leave</td><td><span class="st" style="--c:#4A5361">PAID LEAVE</span></td><td>Works on a sick day as well as a day off. Payroll depends on this one, because it is the only place paid leave is separated from an ordinary unpaid absence</td></tr>
           <tr><td>Decline</td><td><span class="st" style="--c:#FF6157">DECLINED</span></td><td>Covers both sick and day off</td></tr>
         </tbody>
       </table>
     </div>
+
+    <p><strong>You do not have to remember to look.</strong> Every sick day and every day off also lands in Julius's Action Required queue the moment it is filed, so it surfaces in My Work without opening this view at all. <span class="f">Awaiting approval</span> is the place to see them all together; Action Required is what stops one being missed.</p>
 
     <div class="flag warn">
       <span class="lab">Self-approval is watched, not blocked</span>
