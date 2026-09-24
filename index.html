@@ -891,15 +891,18 @@ footer p{max-width:none}
 // Adds the cross-links into the guide's own top bar. Keeps the guide files themselves
 // untouched, so the same file can be published as an artifact or to the web.
 //
-// When the page is embedded (a GoodDay link view, an iframe), every cross-link opens
-// in a new browser tab. Without this a click replaces the embedded page and the reader
-// is stranded, because the embed has no back button of its own.
+// Inside GoodDay the guide is shown as a link view, which is an iframe. There the
+// guide draws NO cross-links at all: GoodDay's own tabs are the navigation, and a
+// second set of links inside the page only confuses matters. A link that navigated
+// the iframe would also strand the reader, because an embed has no back button.
+// Read standalone on the web, the cross-links appear and behave normally.
 (function () {
   var bar = document.querySelector('.topbar-in');
   if (!bar) return;
 
   var embedded = false;
   try { embedded = window.top !== window.self; } catch (e) { embedded = true; }
+  if (embedded) return;
 
   var chip = bar.querySelector('.aud');
   var wrap = document.createElement('span');
@@ -909,7 +912,6 @@ footer p{max-width:none}
     var a = document.createElement('a');
     a.href = l.href;
     a.textContent = l.label;
-    if (embedded) { a.target = '_blank'; a.rel = 'noopener'; }
     a.style.cssText = 'color:var(--muted);text-decoration:none;white-space:nowrap';
     a.onmouseover = function () { a.style.color = 'var(--ink)'; };
     a.onmouseout  = function () { a.style.color = 'var(--muted)'; };
