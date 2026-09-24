@@ -372,18 +372,18 @@ footer p{max-width:none}
       <span class="lab">Nobody asks how heavy your day feels</span>
       <p>The old <strong>Heavy / Medium / Light / Standby / OFF</strong> rating is gone. How loaded you are is read from the jobs on the board and from what you write here, not from a number you give yourself. If you are under water, put it in <span class="f">Blocked by anything?</span> or tell your lead directly.</p>
     </div>
+
+    <div class="note dont">
+      <span class="lab">If you see Form Designer, you are in the wrong place</span>
+      <p>Attendance also has tabs called <span class="b">Daily Standup</span> and <span class="b">Time Off Request</span>. For most people those open the same form. For anyone with full access, which means Rashy and Julius, they open the form <span class="b">designer</span> instead: the same fields, but you are editing the form rather than filling one in, and nothing you type there is recorded.</p>
+      <p>The giveaway is a grey strip above the form reading <span class="f">Form Designer</span>, <span class="f">Settings</span>, <span class="f">Submissions</span>. If you see it, close it and come back through Quick add. Do not edit the fields, because that changes the form for everyone.</p>
+    </div>
   </div>
 </div>
 
 <div class="clause" id="c13">
   <div class="cno">1.3</div>
-<div class="note dont">
-      <span class="lab">If you see Form Designer, you are in the wrong place</span>
-      <p>Attendance also has tabs called <span class="b">Daily Standup</span> and <span class="b">Time Off Request</span>. For most people those open the same form. For anyone with full access, which means Rashy and Julius, they open the form <span class="b">designer</span> instead: the same fields, but you are editing the form rather than filling one in, and nothing you type there is recorded.</p>
-      <p>The giveaway is a grey strip above the form reading <span class="f">Form Designer</span>, <span class="f">Settings</span>, <span class="f">Submissions</span>. If you see it, close it and come back through Quick add. Do not edit the fields, because that changes the form for everyone.</p>
-    </div>
-
-      <div class="cbody">
+  <div class="cbody">
     <h3>One record, one day</h3>
     <div class="the-rule">
       <span class="lab">The rule</span>
@@ -886,13 +886,21 @@ footer p{max-width:none}
 
 </main>
 </div>
-<script>window.__GUIDE_NAV__ = [{"href":"https://planariastudio.github.io/planaria-employee-handbook/","label":"Handbook"}];</script>
+<script>window.__GUIDE_NAV__ = [{"href":"https://planariastudio.github.io/planaria-employee-handbook/","label":"Handbook"},{"href":"https://planariastudio.github.io/planaria-goodday-editor-guide/","label":"Editor guide"},{"href":"https://planariastudio.github.io/planaria-filing-guide/","label":"Filing guide"}];</script>
 <script>
 // Adds the cross-links into the guide's own top bar. Keeps the guide files themselves
 // untouched, so the same file can be published as an artifact or to the web.
+//
+// When the page is embedded (a GoodDay link view, an iframe), every cross-link opens
+// in a new browser tab. Without this a click replaces the embedded page and the reader
+// is stranded, because the embed has no back button of its own.
 (function () {
   var bar = document.querySelector('.topbar-in');
   if (!bar) return;
+
+  var embedded = false;
+  try { embedded = window.top !== window.self; } catch (e) { embedded = true; }
+
   var chip = bar.querySelector('.aud');
   var wrap = document.createElement('span');
   wrap.style.cssText = 'display:flex;gap:14px;align-items:center;margin-left:18px;font-size:13px';
@@ -901,6 +909,7 @@ footer p{max-width:none}
     var a = document.createElement('a');
     a.href = l.href;
     a.textContent = l.label;
+    if (embedded) { a.target = '_blank'; a.rel = 'noopener'; }
     a.style.cssText = 'color:var(--muted);text-decoration:none;white-space:nowrap';
     a.onmouseover = function () { a.style.color = 'var(--ink)'; };
     a.onmouseout  = function () { a.style.color = 'var(--muted)'; };
