@@ -425,7 +425,7 @@ footer p{max-width:none}
               <div class="inputbox filled mk">Sep 22 &rarr; Sep 22 <span class="clickpin">same date twice</span></div>
             </div>
             <div class="field">
-              <p class="fl">Anything Julius should know?</p>
+              <p class="fl">Anything we should know?</p>
               <p class="fh">Optional. One line is enough. It helps Julius decide, and it is the only place he can see a reason.</p>
               <div class="inputbox">&nbsp;</div>
             </div>
@@ -435,11 +435,10 @@ footer p{max-width:none}
       </figure>
       <figure>
         <div class="msg">
-          <p class="h">Your request was answered</p>
-          <p>Julius has answered your time off request for <span class="b">22 September</span>.</p>
-          <p>Open it to see what was decided: <span class="lk">Time off, 22 Sep</span></p>
-        </div>
-        <figcaption>The answer comes to you. You do not need to chase it in chat.</figcaption>
+          <p class="h">Your time off request was approved</p>
+          <p>Julius has approved this request. It now shows in red on the Attendance calendar.</p>
+                  </div>
+        <figcaption>The answer comes to you, approved or declined. You do not need to chase it in chat.</figcaption>
       </figure>
     </div>
 
@@ -447,10 +446,10 @@ footer p{max-width:none}
       <table>
         <thead><tr><th>You asked for</th><th>Status becomes</th><th>What it means for pay</th></tr></thead>
         <tbody>
-          <tr><td>A sick day</td><td><span class="st" style="--c:#4A5361">SICK</span></td><td>No effect on pay, and no effect on your balances</td></tr>
-          <tr><td>A day off</td><td><span class="st" style="--c:#4A5361">DAY OFF</span></td><td>Comes out of your 8 monthly days</td></tr>
-          <tr><td>A day Julius marks as paid</td><td><span class="st" style="--c:#4A5361">PAID LEAVE</span></td><td>Comes out of your annual leave balance</td></tr>
-          <tr><td>Anything turned down</td><td><span class="st" style="--c:#FF6157">DECLINED</span></td><td>You are expected at work</td></tr>
+          <tr><td>A sick day</td><td><span class="st" style="--c:#FF6157">SICK</span></td><td>No effect on pay, and no effect on your balances. Shows in red on the calendar</td></tr>
+          <tr><td>A day off</td><td><span class="st" style="--c:#FF6157">DAY OFF</span></td><td>Comes out of your 8 monthly days. Shows in red on the calendar</td></tr>
+          <tr><td>A day Julius marks as paid</td><td><span class="st" style="--c:#FF6157">PAID LEAVE</span></td><td>Comes out of your annual leave balance. Shows in red on the calendar</td></tr>
+          <tr><td>Anything turned down</td><td><span class="st" style="--c:#4A5361">DECLINED</span></td><td>You are expected at work, so fill the daily standup as usual. It disappears from the calendar</td></tr>
         </tbody>
       </table>
     </div>
@@ -700,10 +699,10 @@ footer p{max-width:none}
       <table>
         <thead><tr><th>What you set</th><th>Status becomes</th><th>Why it matters</th></tr></thead>
         <tbody>
-          <tr><td>Approve a sick day</td><td><span class="st" style="--c:#4A5361">SICK</span></td><td>Keeps illness separate from leave in the record</td></tr>
-          <tr><td>Approve a day off</td><td><span class="st" style="--c:#4A5361">DAY OFF</span></td><td>Unpaid unless you mark it paid</td></tr>
-          <tr><td>Mark as paid leave</td><td><span class="st" style="--c:#4A5361">PAID LEAVE</span></td><td>Works on a sick day as well as a day off. Payroll depends on this one, because it is the only place paid leave is separated from an ordinary unpaid absence</td></tr>
-          <tr><td>Decline</td><td><span class="st" style="--c:#FF6157">DECLINED</span></td><td>Covers both sick and day off</td></tr>
+          <tr><td>Approve a sick day</td><td><span class="st" style="--c:#FF6157">SICK</span></td><td>Keeps illness separate from leave in the record</td></tr>
+          <tr><td>Approve a day off</td><td><span class="st" style="--c:#FF6157">DAY OFF</span></td><td>Unpaid unless you mark it paid</td></tr>
+          <tr><td>Mark as paid leave</td><td><span class="st" style="--c:#FF6157">PAID LEAVE</span></td><td>Works on a sick day as well as a day off. Payroll depends on this one, because it is the only place paid leave is separated from an ordinary unpaid absence</td></tr>
+          <tr><td>Decline</td><td><span class="st" style="--c:#4A5361">DECLINED</span></td><td>Covers both sick and day off. The request leaves the calendar but stays in All records</td></tr>
         </tbody>
       </table>
     </div>
